@@ -267,7 +267,7 @@ export function PortfolioPage({ content, locale }: PortfolioPageProps) {
         </section>
 
         <section id={content.contact.id} className="py-8">
-          <div className="rounded-[36px] border border-line bg-contact-surface px-6 py-8 text-on-action shadow-(--shadow) sm:px-8 sm:py-10">
+          <div className="rounded-[36px] border border-line bg-contact-surface px-6 py-8 text-contact-foreground shadow-(--shadow) sm:px-8 sm:py-10">
             <p className="text-xs uppercase tracking-[0.32em] text-contact-accent">
               {content.contact.eyebrow}
             </p>

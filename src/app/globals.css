@@ -11,9 +11,9 @@
   --accent-soft: #d8f3ef;
   --accent-strong: #c55c2b;
   --shadow: 0 24px 80px rgba(20, 35, 31, 0.12);
-  --action: #14312f;
-  --action-hover: #23524c;
-  --on-action: #f8f1e7;
+  --action: #e8f1ed;
+  --action-hover: #d1e1dc;
+  --on-action: #14231f;
   --status: #48c78e;
   --status-shadow: 0 0 12px rgba(72, 199, 142, 0.8);
   --header-shadow: 0 16px 40px rgba(20, 35, 31, 0.08);
@@ -25,6 +25,7 @@
   --identity-glow-warm: #c55c2b;
   --identity-glow-cool: #0f766e;
   --contact-surface: #101f1d;
+  --contact-foreground: #f8f1e7;
   --contact-accent: #8fd5cd;
   --contact-muted: #cfdbd7;
 }
@@ -91,6 +92,7 @@
   --color-identity-glow-warm: var(--identity-glow-warm);
   --color-identity-glow-cool: var(--identity-glow-cool);
   --color-contact-surface: var(--contact-surface);
+  --color-contact-foreground: var(--contact-foreground);
   --color-contact-accent: var(--contact-accent);
   --color-contact-muted: var(--contact-muted);
   --font-sans: "Aptos", "Trebuchet MS", "Segoe UI", sans-serif;
