@@ -3,6 +3,10 @@
 import { useState } from "react";
 
 import type { NavItem } from "@/core/domain/entities/portfolio";
+import {
+  CloseIcon,
+  MenuIcon,
+} from "@/presentation/components/icons/interface-icons";
 
 type MobileNavigationProps = {
   items: NavItem[];
@@ -23,13 +27,9 @@ export function MobileNavigation({ items, label }: MobileNavigationProps) {
         className="grid h-11 w-11 place-items-center rounded-full border border-line bg-surface-strong text-foreground transition hover:bg-accent-soft"
       >
         {isOpen ? (
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true" className="h-5 w-5">
-            <path d="m6 6 12 12M18 6 6 18" />
-          </svg>
+          <CloseIcon className="h-5 w-5" />
         ) : (
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true" className="h-5 w-5">
-            <path d="M4 7h16M4 12h16M4 17h16" />
-          </svg>
+          <MenuIcon className="h-5 w-5" />
         )}
       </button>
 
