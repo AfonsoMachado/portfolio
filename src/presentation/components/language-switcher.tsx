@@ -20,7 +20,7 @@ export function LanguageSwitcher({
           {label}
         </span>
       ) : null}
-      <div className="flex rounded-full border border-line bg-surface-strong p-1 shadow-[0_8px_24px_rgba(20,35,31,0.08)]">
+      <div className="flex rounded-full border border-line bg-surface-strong p-1 shadow-(--control-shadow)">
         {locales.map((locale) => {
           const isActive = locale === currentLocale;
 
@@ -30,7 +30,7 @@ export function LanguageSwitcher({
               href={`/${locale}`}
               className={`rounded-full px-3 py-2 text-xs font-medium uppercase tracking-[0.2em] transition ${
                 isActive
-                  ? "bg-[#14312f] text-[#f8f1e7]"
+                  ? "bg-action text-on-action"
                   : "text-muted hover:text-foreground"
               }`}
             >

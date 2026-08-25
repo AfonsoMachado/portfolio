@@ -11,6 +11,22 @@
   --accent-soft: #d8f3ef;
   --accent-strong: #c55c2b;
   --shadow: 0 24px 80px rgba(20, 35, 31, 0.12);
+  --action: #14312f;
+  --action-hover: #23524c;
+  --on-action: #f8f1e7;
+  --status: #48c78e;
+  --status-shadow: 0 0 12px rgba(72, 199, 142, 0.8);
+  --header-shadow: 0 16px 40px rgba(20, 35, 31, 0.08);
+  --control-shadow: 0 8px 24px rgba(20, 35, 31, 0.08);
+  --identity-surface: #14312f;
+  --identity-foreground: #f9f2e9;
+  --identity-accent: #9fd9d2;
+  --identity-muted: #d2ddd9;
+  --identity-glow-warm: #c55c2b;
+  --identity-glow-cool: #0f766e;
+  --contact-surface: #101f1d;
+  --contact-accent: #8fd5cd;
+  --contact-muted: #cfdbd7;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -64,6 +80,19 @@
   --color-accent: var(--accent);
   --color-accent-soft: var(--accent-soft);
   --color-accent-strong: var(--accent-strong);
+  --color-action: var(--action);
+  --color-action-hover: var(--action-hover);
+  --color-on-action: var(--on-action);
+  --color-status: var(--status);
+  --color-identity-surface: var(--identity-surface);
+  --color-identity-foreground: var(--identity-foreground);
+  --color-identity-accent: var(--identity-accent);
+  --color-identity-muted: var(--identity-muted);
+  --color-identity-glow-warm: var(--identity-glow-warm);
+  --color-identity-glow-cool: var(--identity-glow-cool);
+  --color-contact-surface: var(--contact-surface);
+  --color-contact-accent: var(--contact-accent);
+  --color-contact-muted: var(--contact-muted);
   --font-sans: "Aptos", "Trebuchet MS", "Segoe UI", sans-serif;
   --font-mono: "Cascadia Mono", "Consolas", "Courier New", monospace;
 }

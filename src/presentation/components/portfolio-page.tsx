@@ -16,7 +16,7 @@ export function PortfolioPage({ content, locale }: PortfolioPageProps) {
       <div className="mx-auto flex min-h-screen w-full max-w-7xl flex-col px-5 pb-10 pt-5 sm:px-8 lg:px-10">
         <div className="flex items-center justify-between border-b border-line px-1 pb-3 font-mono text-xs uppercase tracking-[0.2em] text-muted sm:px-2">
           <p className="flex items-center gap-2">
-            <span className="h-2 w-2 rounded-full bg-[#48c78e] shadow-[0_0_12px_rgba(72,199,142,0.8)]" />
+            <span className="h-2 w-2 rounded-full bg-status shadow-(--status-shadow)" />
             <span className="hidden sm:inline">{content.contact.availability}</span>
           </p>
           <div className="flex items-center gap-3">
@@ -29,7 +29,7 @@ export function PortfolioPage({ content, locale }: PortfolioPageProps) {
           </div>
         </div>
 
-        <header className="sticky top-4 z-20 mt-4 rounded-[28px] border border-line bg-surface/90 px-5 py-4 shadow-[0_16px_40px_rgba(20,35,31,0.08)] backdrop-blur-xl">
+        <header className="sticky top-4 z-20 mt-4 rounded-[28px] border border-line bg-surface/90 px-5 py-4 shadow-(--header-shadow) backdrop-blur-xl">
           <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
             <div>
               <div>
@@ -71,7 +71,7 @@ export function PortfolioPage({ content, locale }: PortfolioPageProps) {
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
               <a
                 href="#projects"
-                className="inline-flex items-center justify-center rounded-full bg-[#14312f] px-6 py-3 text-sm font-medium text-[#f8f1e7] transition hover:bg-[#23524c]"
+                className="inline-flex items-center justify-center rounded-full bg-action px-6 py-3 text-sm font-medium text-on-action transition hover:bg-action-hover"
               >
                 {content.hero.primaryCta}
               </a>
@@ -85,20 +85,20 @@ export function PortfolioPage({ content, locale }: PortfolioPageProps) {
           </div>
 
           <aside className="grid gap-6">
-            <div className="relative overflow-hidden rounded-[36px] border border-line bg-[#14312f] p-8 text-[#f9f2e9] shadow-(--shadow)">
-              <div className="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-[#c55c2b]/30 blur-2xl" />
-              <div className="absolute -bottom-12 left-12 h-40 w-40 rounded-full bg-[#0f766e]/40 blur-3xl" />
+            <div className="relative overflow-hidden rounded-[36px] border border-line bg-identity-surface p-8 text-identity-foreground shadow-(--shadow)">
+              <div className="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-identity-glow-warm/30 blur-2xl" />
+              <div className="absolute -bottom-12 left-12 h-40 w-40 rounded-full bg-identity-glow-cool/40 blur-3xl" />
               <div className="relative">
-                <div className="inline-flex rounded-full border border-white/15 px-4 py-2 font-mono text-xs uppercase tracking-[0.3em] text-[#9fd9d2]">
+                <div className="inline-flex rounded-full border border-white/15 px-4 py-2 font-mono text-xs uppercase tracking-[0.3em] text-identity-accent">
                   AM
                 </div>
-                <p className="mt-8 text-sm uppercase tracking-[0.28em] text-[#9fd9d2]">
+                <p className="mt-8 text-sm uppercase tracking-[0.28em] text-identity-accent">
                   {content.brand.location}
                 </p>
                 <h3 className="mt-4 text-3xl font-semibold leading-tight">
                   {content.brand.name}
                 </h3>
-                <p className="mt-4 max-w-sm text-sm leading-7 text-[#d2ddd9]">
+                <p className="mt-4 max-w-sm text-sm leading-7 text-identity-muted">
                   {content.footer}
                 </p>
               </div>
@@ -267,8 +267,8 @@ export function PortfolioPage({ content, locale }: PortfolioPageProps) {
         </section>
 
         <section id={content.contact.id} className="py-8">
-          <div className="rounded-[36px] border border-line bg-[#101f1d] px-6 py-8 text-[#f8f1e7] shadow-(--shadow) sm:px-8 sm:py-10">
-            <p className="text-xs uppercase tracking-[0.32em] text-[#8fd5cd]">
+          <div className="rounded-[36px] border border-line bg-contact-surface px-6 py-8 text-on-action shadow-(--shadow) sm:px-8 sm:py-10">
+            <p className="text-xs uppercase tracking-[0.32em] text-contact-accent">
               {content.contact.eyebrow}
             </p>
             <div className="mt-4 grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
@@ -276,10 +276,10 @@ export function PortfolioPage({ content, locale }: PortfolioPageProps) {
                 <h2 className="max-w-2xl text-3xl font-semibold leading-tight sm:text-4xl">
                   {content.contact.title}
                 </h2>
-                <p className="mt-5 max-w-2xl text-base leading-8 text-[#cfdbd7]">
+                <p className="mt-5 max-w-2xl text-base leading-8 text-contact-muted">
                   {content.contact.description}
                 </p>
-                <p className="mt-5 font-mono text-sm uppercase tracking-[0.24em] text-[#8fd5cd]">
+                <p className="mt-5 font-mono text-sm uppercase tracking-[0.24em] text-contact-accent">
                   {content.contact.availability}
                 </p>
               </div>
@@ -291,10 +291,10 @@ export function PortfolioPage({ content, locale }: PortfolioPageProps) {
                     href={link.href}
                     target="_blank"
                     rel="noreferrer"
-                    className="rounded-3xl border border-white/10 bg-white/5 p-5 transition hover:border-[#8fd5cd]/40 hover:bg-white/8"
+                    className="rounded-3xl border border-white/10 bg-white/5 p-5 transition hover:border-contact-accent/40 hover:bg-white/8"
                   >
                     <p className="text-lg font-semibold">{link.label}</p>
-                    <p className="mt-2 text-sm leading-7 text-[#cfdbd7]">
+                    <p className="mt-2 text-sm leading-7 text-contact-muted">
                       {link.caption}
                     </p>
                   </Link>

@@ -98,7 +98,7 @@ export function ThemeSwitcher({ labels }: ThemeSwitcherProps) {
             title={option.label}
             className={`grid h-8 w-8 place-items-center rounded-full transition ${
               theme === option.value
-                ? "bg-[#14312f] text-[#f8f1e7]"
+                ? "bg-action text-on-action"
                 : "text-muted hover:text-foreground"
             }`}
           >
