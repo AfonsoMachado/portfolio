@@ -90,10 +90,11 @@ export function ThemeSwitcher({ labels }: ThemeSwitcherProps) {
           aria-pressed={theme === option.value}
           aria-label={option.label}
           title={option.label}
-          className={`grid h-8 w-8 place-items-center rounded-full cursor-pointer transition ${theme === option.value
+          className={`grid h-8 w-8 place-items-center rounded-full cursor-pointer transition ${
+            theme === option.value
               ? "bg-action text-on-action"
               : "text-muted hover:text-foreground"
-            }`}
+          }`}
         >
           <span className="h-4 w-4">
             <ThemeIcon theme={option.value} />

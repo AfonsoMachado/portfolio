@@ -36,10 +36,11 @@ export function MobileNavigation({ items, label }: MobileNavigationProps) {
       <nav
         id="mobile-navigation"
         aria-label={label}
-        className={`absolute right-0 top-full z-30 mt-3 w-56 rounded-3xl border border-line bg-surface-strong p-2 shadow-(--header-shadow) transition-all duration-200 ${isOpen
+        className={`absolute right-0 top-full z-30 mt-3 w-56 rounded-3xl border border-line bg-surface-strong p-2 shadow-(--header-shadow) transition-all duration-200 ${
+          isOpen
             ? "visible translate-y-0 opacity-100"
             : "invisible -translate-y-2 opacity-0"
-          }`}
+        }`}
       >
         {items.map((item) => (
           <a

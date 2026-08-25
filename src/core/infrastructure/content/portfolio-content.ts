@@ -41,7 +41,8 @@ export const portfolioContent: PortfolioDictionary = {
     about: {
       id: "about",
       eyebrow: "Sobre mim",
-      title: "Em constante aprendizado, transformando ideias em aplicações web.",
+      title:
+        "Em constante aprendizado, transformando ideias em aplicações web.",
       paragraphs: [
         "Sou desenvolvedor web full-stack e estudante de Engenharia de Computação. Gosto de entender como as coisas funcionam, escrever código claro e entregar experiências úteis para quem usa o produto.",
         "Tenho interesse em desenvolvimento front-end, back-end e mobile. Este espaço reúne trabalhos que representam o que venho aprendendo e construindo.",
@@ -85,17 +86,20 @@ export const portfolioContent: PortfolioDictionary = {
         },
         {
           title: "Forma de trabalho",
-          items: ["App Router", "Clean Architecture", "Git", "Deploy na Vercel"],
+          items: [
+            "App Router",
+            "Clean Architecture",
+            "Git",
+            "Deploy na Vercel",
+          ],
         },
       ],
     },
     projects: {
       id: "projects",
       eyebrow: "Projetos em destaque",
-      title:
-        "Projetos que desenvolvi para praticar, explorar e evoluir.",
-      description:
-        "Uma seleção dos meus repositórios públicos no GitHub.",
+      title: "Projetos que desenvolvi para praticar, explorar e evoluir.",
+      description: "Uma seleção dos meus repositórios públicos no GitHub.",
       repositoryLabel: "Repositório",
       openLabel: "Abrir repositório",
       moreLabel: "Ver perfil completo no GitHub",
@@ -147,12 +151,10 @@ export const portfolioContent: PortfolioDictionary = {
     contact: {
       id: "contact",
       eyebrow: "Contato",
-      title:
-        "Vamos conversar.",
+      title: "Vamos conversar.",
       description:
         "Fique à vontade para entrar em contato ou acompanhar meu trabalho nas redes.",
-      availability:
-        "Aberto a oportunidades e novas conexões.",
+      availability: "Aberto a oportunidades e novas conexões.",
       links: [
         {
           label: "GitHub",
@@ -171,7 +173,8 @@ export const portfolioContent: PortfolioDictionary = {
         },
       ],
     },
-    footer: "Desenvolvedor web full-stack e estudante de Engenharia de Computação.",
+    footer:
+      "Desenvolvedor web full-stack e estudante de Engenharia de Computação.",
   },
   en: {
     locale: "en",
@@ -254,17 +257,20 @@ export const portfolioContent: PortfolioDictionary = {
         },
         {
           title: "Workflow",
-          items: ["App Router", "Clean Architecture", "Git", "Vercel deployment"],
+          items: [
+            "App Router",
+            "Clean Architecture",
+            "Git",
+            "Vercel deployment",
+          ],
         },
       ],
     },
     projects: {
       id: "projects",
       eyebrow: "Selected work",
-      title:
-        "Projects I built to practice, explore, and grow.",
-      description:
-        "A selection of my public GitHub repositories.",
+      title: "Projects I built to practice, explore, and grow.",
+      description: "A selection of my public GitHub repositories.",
       repositoryLabel: "Repository",
       openLabel: "Open repository",
       moreLabel: "View full GitHub profile",
@@ -316,12 +322,10 @@ export const portfolioContent: PortfolioDictionary = {
     contact: {
       id: "contact",
       eyebrow: "Contact",
-      title:
-        "Let's talk.",
+      title: "Let's talk.",
       description:
         "Feel free to get in touch or follow my work through my social profiles.",
-      availability:
-        "Open to opportunities and new connections.",
+      availability: "Open to opportunities and new connections.",
       links: [
         {
           label: "GitHub",
@@ -405,7 +409,8 @@ export const portfolioContent: PortfolioDictionary = {
     stack: {
       id: "stack",
       eyebrow: "Stack y enfoque",
-      title: "Herramientas y áreas donde concentro la mayor parte de mi energía.",
+      title:
+        "Herramientas y áreas donde concentro la mayor parte de mi energía.",
       description:
         "Tecnologías que vengo utilizando en estudios y proyectos personales.",
       groups: [
@@ -423,17 +428,20 @@ export const portfolioContent: PortfolioDictionary = {
         },
         {
           title: "Flujo de trabajo",
-          items: ["App Router", "Clean Architecture", "Git", "Deploy en Vercel"],
+          items: [
+            "App Router",
+            "Clean Architecture",
+            "Git",
+            "Deploy en Vercel",
+          ],
         },
       ],
     },
     projects: {
       id: "projects",
       eyebrow: "Proyectos destacados",
-      title:
-        "Proyectos que desarrollé para practicar, explorar y evolucionar.",
-      description:
-        "Una selección de mis repositorios públicos en GitHub.",
+      title: "Proyectos que desarrollé para practicar, explorar y evolucionar.",
+      description: "Una selección de mis repositorios públicos en GitHub.",
       repositoryLabel: "Repositorio",
       openLabel: "Abrir repositorio",
       moreLabel: "Ver perfil completo en GitHub",
@@ -485,12 +493,10 @@ export const portfolioContent: PortfolioDictionary = {
     contact: {
       id: "contact",
       eyebrow: "Contacto",
-      title:
-        "Hablemos.",
+      title: "Hablemos.",
       description:
         "No dudes en ponerte en contacto o seguir mi trabajo en las redes.",
-      availability:
-        "Abierto a oportunidades y nuevas conexiones.",
+      availability: "Abierto a oportunidades y nuevas conexiones.",
       links: [
         {
           label: "GitHub",
@@ -509,6 +515,7 @@ export const portfolioContent: PortfolioDictionary = {
         },
       ],
     },
-    footer: "Desarrollador web full-stack y estudiante de Ingeniería de Computación.",
+    footer:
+      "Desarrollador web full-stack y estudiante de Ingeniería de Computación.",
   },
 };
