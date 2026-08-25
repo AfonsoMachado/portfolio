@@ -2,6 +2,7 @@ import Link from "next/link";
 
 import type { PortfolioContent } from "@/core/domain/entities/portfolio";
 import { LanguageSwitcher } from "@/presentation/components/language-switcher";
+import { Reveal } from "@/presentation/components/reveal";
 import { ThemeSwitcher } from "@/presentation/components/theme-switcher";
 import type { Locale } from "@/shared/i18n/config";
 
@@ -57,7 +58,8 @@ export function PortfolioPage({ content, locale }: PortfolioPageProps) {
           </div>
         </header>
 
-        <section className="grid flex-1 gap-6 py-8 lg:grid-cols-[1.35fr_0.9fr] lg:py-12">
+        <Reveal>
+          <section className="grid flex-1 gap-6 py-8 lg:grid-cols-[1.35fr_0.9fr] lg:py-12">
           <div className="rounded-[36px] border border-line bg-surface px-6 py-8 shadow-(--shadow) sm:px-8 sm:py-10">
             <div className="max-w-3xl space-y-6">
               <h2 className="text-4xl font-semibold leading-tight text-foreground sm:text-5xl lg:text-6xl">
@@ -124,12 +126,14 @@ export function PortfolioPage({ content, locale }: PortfolioPageProps) {
               </Link>
             </div>
           </aside>
-        </section>
+          </section>
+        </Reveal>
 
-        <section
-          id={content.about.id}
-          className="grid gap-6 py-8 lg:grid-cols-[1.05fr_1fr]"
-        >
+        <Reveal>
+          <section
+            id={content.about.id}
+            className="grid gap-6 py-8 lg:grid-cols-[1.05fr_1fr]"
+          >
           <div className="rounded-4xl border border-line bg-surface px-6 py-8 shadow-(--shadow) sm:px-8">
             <p className="text-xs uppercase tracking-[0.32em] text-accent">
               {content.about.eyebrow}
@@ -159,9 +163,11 @@ export function PortfolioPage({ content, locale }: PortfolioPageProps) {
               </article>
             ))}
           </div>
-        </section>
+          </section>
+        </Reveal>
 
-        <section id={content.stack.id} className="py-8">
+        <Reveal>
+          <section id={content.stack.id} className="py-8">
           <div className="rounded-4xl border border-line bg-surface px-6 py-8 shadow-(--shadow) sm:px-8">
             <p className="text-xs uppercase tracking-[0.32em] text-accent">
               {content.stack.eyebrow}
@@ -196,9 +202,11 @@ export function PortfolioPage({ content, locale }: PortfolioPageProps) {
               ))}
             </div>
           </div>
-        </section>
+          </section>
+        </Reveal>
 
-        <section id={content.projects.id} className="py-8">
+        <Reveal>
+          <section id={content.projects.id} className="py-8">
           <div className="flex flex-col gap-4">
             <p className="text-xs uppercase tracking-[0.32em] text-accent">
               {content.projects.eyebrow}
@@ -264,9 +272,11 @@ export function PortfolioPage({ content, locale }: PortfolioPageProps) {
               </article>
             ))}
           </div>
-        </section>
+          </section>
+        </Reveal>
 
-        <section id={content.contact.id} className="py-8">
+        <Reveal>
+          <section id={content.contact.id} className="py-8">
           <div className="rounded-[36px] border border-line bg-contact-surface px-6 py-8 text-contact-foreground shadow-(--shadow) sm:px-8 sm:py-10">
             <p className="text-xs uppercase tracking-[0.32em] text-contact-accent">
               {content.contact.eyebrow}
@@ -302,7 +312,8 @@ export function PortfolioPage({ content, locale }: PortfolioPageProps) {
               </div>
             </div>
           </div>
-        </section>
+          </section>
+        </Reveal>
       </div>
     </main>
   );
