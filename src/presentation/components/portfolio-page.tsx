@@ -15,8 +15,8 @@ export function PortfolioPage({ content, locale }: PortfolioPageProps) {
     <main id="home" className="relative overflow-hidden">
       <div className="mx-auto flex min-h-screen w-full max-w-7xl flex-col px-5 pb-10 pt-5 sm:px-8 lg:px-10">
         <header className="sticky top-4 z-20 rounded-[28px] border border-line bg-surface/90 px-5 py-4 shadow-[0_16px_40px_rgba(20,35,31,0.08)] backdrop-blur-xl">
-          <div className="flex flex-col gap-5 xl:flex-row xl:items-center xl:justify-between">
-            <div className="flex flex-wrap items-center justify-between gap-4">
+          <div className="flex flex-col gap-5 lg:grid lg:grid-cols-[minmax(0,1fr)_auto] lg:items-center xl:grid-cols-[230px_minmax(0,1fr)_auto] xl:gap-6">
+            <div>
               <div>
                 <p className="text-xs uppercase tracking-[0.3em] text-accent">
                   {content.brand.role}
@@ -25,16 +25,9 @@ export function PortfolioPage({ content, locale }: PortfolioPageProps) {
                   {content.brand.name}
                 </h1>
               </div>
-              <div className="flex items-center gap-2 xl:hidden">
-                <ThemeSwitcher labels={content.theme} />
-                <LanguageSwitcher
-                  currentLocale={locale}
-                  label={content.languageSwitcherLabel}
-                />
-              </div>
             </div>
 
-            <nav className="flex flex-wrap gap-3 text-sm text-muted">
+            <nav className="flex flex-wrap gap-2 text-sm text-muted lg:col-span-2 lg:flex-nowrap lg:justify-between xl:col-span-1 xl:col-start-2 xl:row-start-1">
               {content.navigation.map((item) => (
                 <a
                   key={item.href}
@@ -46,7 +39,7 @@ export function PortfolioPage({ content, locale }: PortfolioPageProps) {
               ))}
             </nav>
 
-            <div className="hidden items-center gap-4 xl:flex">
+            <div className="flex flex-wrap items-center gap-3 lg:justify-end">
               <ThemeSwitcher labels={content.theme} />
               <LanguageSwitcher
                 currentLocale={locale}
