@@ -58,7 +58,7 @@ export function PortfolioPage({ content, locale }: PortfolioPageProps) {
         </header>
 
         <section className="grid flex-1 gap-6 py-8 lg:grid-cols-[1.35fr_0.9fr] lg:py-12">
-          <div className="rounded-[36px] border border-line bg-surface px-6 py-8 shadow-[var(--shadow)] sm:px-8 sm:py-10">
+          <div className="rounded-[36px] border border-line bg-surface px-6 py-8 shadow-(--shadow) sm:px-8 sm:py-10">
             <div className="max-w-3xl space-y-6">
               <h2 className="text-4xl font-semibold leading-tight text-foreground sm:text-5xl lg:text-6xl">
                 {content.hero.title}
@@ -85,7 +85,7 @@ export function PortfolioPage({ content, locale }: PortfolioPageProps) {
           </div>
 
           <aside className="grid gap-6">
-            <div className="relative overflow-hidden rounded-[36px] border border-line bg-[#14312f] p-8 text-[#f9f2e9] shadow-[var(--shadow)]">
+            <div className="relative overflow-hidden rounded-[36px] border border-line bg-[#14312f] p-8 text-[#f9f2e9] shadow-(--shadow)">
               <div className="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-[#c55c2b]/30 blur-2xl" />
               <div className="absolute -bottom-12 left-12 h-40 w-40 rounded-full bg-[#0f766e]/40 blur-3xl" />
               <div className="relative">
@@ -104,7 +104,7 @@ export function PortfolioPage({ content, locale }: PortfolioPageProps) {
               </div>
             </div>
 
-            <div className="rounded-[36px] border border-line bg-surface-strong p-8 shadow-[var(--shadow)]">
+            <div className="rounded-[36px] border border-line bg-surface-strong p-8 shadow-(--shadow)">
               <p className="text-xs uppercase tracking-[0.3em] text-accent">
                 GitHub
               </p>
@@ -130,7 +130,7 @@ export function PortfolioPage({ content, locale }: PortfolioPageProps) {
           id={content.about.id}
           className="grid gap-6 py-8 lg:grid-cols-[1.05fr_1fr]"
         >
-          <div className="rounded-[32px] border border-line bg-surface px-6 py-8 shadow-[var(--shadow)] sm:px-8">
+          <div className="rounded-[32px] border border-line bg-surface px-6 py-8 shadow-(--shadow) sm:px-8">
             <p className="text-xs uppercase tracking-[0.32em] text-accent">
               {content.about.eyebrow}
             </p>
@@ -148,7 +148,7 @@ export function PortfolioPage({ content, locale }: PortfolioPageProps) {
             {content.about.highlights.map((highlight) => (
               <article
                 key={highlight.title}
-                className="rounded-[28px] border border-line bg-surface-strong p-6 shadow-[var(--shadow)]"
+                className="rounded-[28px] border border-line bg-surface-strong p-6 shadow-(--shadow)"
               >
                 <h3 className="text-xl font-semibold text-foreground">
                   {highlight.title}
@@ -162,7 +162,7 @@ export function PortfolioPage({ content, locale }: PortfolioPageProps) {
         </section>
 
         <section id={content.stack.id} className="py-8">
-          <div className="rounded-[32px] border border-line bg-surface px-6 py-8 shadow-[var(--shadow)] sm:px-8">
+          <div className="rounded-[32px] border border-line bg-surface px-6 py-8 shadow-(--shadow) sm:px-8">
             <p className="text-xs uppercase tracking-[0.32em] text-accent">
               {content.stack.eyebrow}
             </p>
@@ -227,7 +227,7 @@ export function PortfolioPage({ content, locale }: PortfolioPageProps) {
             {content.projects.items.map((project) => (
               <article
                 key={project.title}
-                className="flex h-full flex-col rounded-[30px] border border-line bg-surface px-6 py-6 shadow-[var(--shadow)]"
+                className="flex h-full flex-col rounded-[30px] border border-line bg-surface px-6 py-6 shadow-(--shadow)"
               >
                 <div className="flex items-center justify-between gap-4">
                   <p className="font-mono text-xs uppercase tracking-[0.3em] text-accent">
@@ -267,7 +267,7 @@ export function PortfolioPage({ content, locale }: PortfolioPageProps) {
         </section>
 
         <section id={content.contact.id} className="py-8">
-          <div className="rounded-[36px] border border-line bg-[#101f1d] px-6 py-8 text-[#f8f1e7] shadow-[var(--shadow)] sm:px-8 sm:py-10">
+          <div className="rounded-[36px] border border-line bg-[#101f1d] px-6 py-8 text-[#f8f1e7] shadow-(--shadow) sm:px-8 sm:py-10">
             <p className="text-xs uppercase tracking-[0.32em] text-[#8fd5cd]">
               {content.contact.eyebrow}
             </p>
