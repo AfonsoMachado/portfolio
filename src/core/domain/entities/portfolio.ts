@@ -5,11 +5,6 @@ export type NavItem = {
   label: string;
 };
 
-export type HeroMetric = {
-  label: string;
-  value: string;
-};
-
 export type Highlight = {
   title: string;
   description: string;
@@ -46,13 +41,17 @@ export type PortfolioContent = {
   };
   navigation: NavItem[];
   languageSwitcherLabel: string;
+  theme: {
+    label: string;
+    systemLabel: string;
+    lightLabel: string;
+    darkLabel: string;
+  };
   hero: {
-    eyebrow: string;
     title: string;
     description: string;
     primaryCta: string;
     secondaryCta: string;
-    metrics: HeroMetric[];
   };
   about: {
     id: "about";

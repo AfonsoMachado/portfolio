@@ -24,44 +24,42 @@ export const portfolioContent: PortfolioDictionary = {
       { href: "#contact", label: "Contato" },
     ],
     languageSwitcherLabel: "Idiomas",
+    theme: {
+      label: "Tema",
+      systemLabel: "Sistema",
+      lightLabel: "Claro",
+      darkLabel: "Escuro",
+    },
     hero: {
-      eyebrow: "Next.js 16.3 + App Router + clean architecture",
-      title:
-        "Interfaces sólidas, código organizado e uma presença digital com identidade própria.",
+      title: "Olá, eu sou Afonso Machado.",
       description:
-        "Sou Afonso Machado, desenvolvedor full-stack com foco em experiências web responsivas, componentes bem estruturados e bases de código pensadas para evoluir sem virar bagunça.",
+        "Estudante de Engenharia de Computação e desenvolvedor full-stack. Aqui estão alguns dos projetos e tecnologias que fazem parte da minha trajetória.",
       primaryCta: "Ver projetos",
       secondaryCta: "Entrar em contato",
-      metrics: [
-        { value: "pt-BR", label: "idioma principal" },
-        { value: "EN / ES", label: "versões adicionais" },
-        { value: "App Router", label: "base pronta para Vercel" },
-      ],
     },
     about: {
       id: "about",
       eyebrow: "Sobre mim",
-      title:
-        "Construo produtos web com atenção real em estrutura, legibilidade e experiência.",
+      title: "Em constante aprendizado, transformando ideias em aplicações web.",
       paragraphs: [
-        "No seu perfil público, você se apresenta como estudante de Engenharia de Computação, desenvolvedor web full-stack e alguém sempre em busca de expandir repertório técnico.",
-        "Seu interesse passa por front-end, back-end e interfaces que pareçam cuidadas em cada detalhe. Também há abertura para explorar mobile e transformar referências visuais em implementações consistentes.",
+        "Sou desenvolvedor web full-stack e estudante de Engenharia de Computação. Gosto de entender como as coisas funcionam, escrever código claro e entregar experiências úteis para quem usa o produto.",
+        "Tenho interesse em desenvolvimento front-end, back-end e mobile. Este espaço reúne trabalhos que representam o que venho aprendendo e construindo.",
       ],
       highlights: [
         {
           title: "Arquitetura limpa",
           description:
-            "Separação de domínio, aplicação, infraestrutura e apresentação para facilitar manutenção e crescimento.",
+            "Organização de código que ajuda a manter aplicações compreensíveis e preparadas para evoluir.",
         },
         {
           title: "UI com direção visual",
           description:
-            "Layouts responsivos, tipografia intencional e identidade própria, sem depender de template genérico.",
+            "Interfaces responsivas com atenção à clareza, consistência e aos detalhes de interação.",
         },
         {
           title: "Entrega prática",
           description:
-            "Projeto organizado para seguir evoluindo, com rotas por idioma e deploy simples em plataformas modernas.",
+            "Projetos que começam com uma boa base e podem receber melhorias de forma contínua.",
         },
       ],
     },
@@ -70,7 +68,7 @@ export const portfolioContent: PortfolioDictionary = {
       eyebrow: "Stack e foco",
       title: "Ferramentas e áreas em que concentro minha energia.",
       description:
-        "Next.js App Router com separação por camadas para manter o projeto evolutivo, internacionalizado e simples de publicar.",
+        "Tecnologias que venho utilizando em estudos e projetos pessoais.",
       groups: [
         {
           title: "Front-end",
@@ -94,9 +92,9 @@ export const portfolioContent: PortfolioDictionary = {
       id: "projects",
       eyebrow: "Projetos em destaque",
       title:
-        "Uma seleção de repositórios públicos para mostrar amplitude e execução.",
+        "Projetos que desenvolvi para praticar, explorar e evoluir.",
       description:
-        "Usei como base os projetos destacados no seu GitHub público, organizando a apresentação de forma mais editorial.",
+        "Uma seleção dos meus repositórios públicos no GitHub.",
       repositoryLabel: "Repositório",
       openLabel: "Abrir repositório",
       moreLabel: "Ver perfil completo no GitHub",
@@ -149,11 +147,11 @@ export const portfolioContent: PortfolioDictionary = {
       id: "contact",
       eyebrow: "Contato",
       title:
-        "Se a ideia pede uma interface forte e uma base bem montada, vamos conversar.",
+        "Vamos conversar.",
       description:
-        "Este portfólio foi estruturado para te representar de forma mais madura, mas também para funcionar como ponto de partida de futuras melhorias.",
+        "Fique à vontade para entrar em contato ou acompanhar meu trabalho nas redes.",
       availability:
-        "Disponível para oportunidades em desenvolvimento front-end, full-stack e produtos digitais.",
+        "Aberto a oportunidades e novas conexões.",
       links: [
         {
           label: "GitHub",
@@ -172,8 +170,7 @@ export const portfolioContent: PortfolioDictionary = {
         },
       ],
     },
-    footer:
-      "Portfólio desenhado para ser multilíngue, fácil de manter e pronto para deploy contínuo.",
+    footer: "Desenvolvedor web full-stack e estudante de Engenharia de Computação.",
   },
   en: {
     locale: "en",
@@ -195,28 +192,26 @@ export const portfolioContent: PortfolioDictionary = {
       { href: "#contact", label: "Contact" },
     ],
     languageSwitcherLabel: "Languages",
+    theme: {
+      label: "Theme",
+      systemLabel: "System",
+      lightLabel: "Light",
+      darkLabel: "Dark",
+    },
     hero: {
-      eyebrow: "Next.js 16.3 + App Router + clean architecture",
-      title:
-        "Reliable interfaces, organized code, and a digital presence with its own visual voice.",
+      title: "Hi, I am Afonso Machado.",
       description:
-        "I am Afonso Machado, a full-stack developer focused on responsive web experiences, structured component systems, and codebases designed to scale without turning brittle.",
+        "Computer Engineering student and full-stack developer. Here are some of the projects and technologies that are part of my journey.",
       primaryCta: "See projects",
       secondaryCta: "Get in touch",
-      metrics: [
-        { value: "pt-BR", label: "primary language" },
-        { value: "EN / ES", label: "additional versions" },
-        { value: "App Router", label: "Vercel-ready foundation" },
-      ],
     },
     about: {
       id: "about",
       eyebrow: "About",
-      title:
-        "I build web products with real attention to structure, readability, and experience.",
+      title: "Always learning and turning ideas into web applications.",
       paragraphs: [
-        "On the public profile, Afonso describes himself as a Computer Engineering student, a full-stack web developer, and someone consistently expanding his technical range.",
-        "His interests span front-end, back-end, and interfaces that feel considered in every detail. He also explores mobile work and turns visual references into coherent implementations.",
+        "I am a full-stack web developer and a Computer Engineering student. I enjoy understanding how things work, writing clear code, and delivering useful experiences for product users.",
+        "I am interested in front-end, back-end, and mobile development. This space brings together work that represents what I have been learning and building.",
       ],
       highlights: [
         {
@@ -227,12 +222,12 @@ export const portfolioContent: PortfolioDictionary = {
         {
           title: "Deliberate UI direction",
           description:
-            "Responsive layouts, expressive typography, and a distinct identity instead of a generic portfolio clone.",
+            "Responsive interfaces with attention to clarity, consistency, and interaction details.",
         },
         {
           title: "Practical delivery",
           description:
-            "Organized for continued iteration, with locale-based routing and straightforward deployment.",
+            "Projects that start from a solid base and can receive continuous improvements.",
         },
       ],
     },
@@ -241,7 +236,7 @@ export const portfolioContent: PortfolioDictionary = {
       eyebrow: "Stack and focus",
       title: "The tools and areas where I put most of my energy.",
       description:
-        "Next.js App Router with layered separation so the project stays maintainable, multilingual, and straightforward to publish.",
+        "Technologies I have been using in studies and personal projects.",
       groups: [
         {
           title: "Front-end",
@@ -265,9 +260,9 @@ export const portfolioContent: PortfolioDictionary = {
       id: "projects",
       eyebrow: "Selected work",
       title:
-        "A curated set of public repositories that shows range and execution.",
+        "Projects I built to practice, explore, and grow.",
       description:
-        "This section is based on the repositories highlighted on the public GitHub profile, presented with a more editorial structure.",
+        "A selection of my public GitHub repositories.",
       repositoryLabel: "Repository",
       openLabel: "Open repository",
       moreLabel: "View full GitHub profile",
@@ -320,11 +315,11 @@ export const portfolioContent: PortfolioDictionary = {
       id: "contact",
       eyebrow: "Contact",
       title:
-        "If the idea needs strong interface work and a well-structured base, let's talk.",
+        "Let's talk.",
       description:
-        "This portfolio is structured to represent Afonso more clearly today, while staying ready for future improvements.",
+        "Feel free to get in touch or follow my work through my social profiles.",
       availability:
-        "Open to front-end, full-stack, and digital product opportunities.",
+        "Open to opportunities and new connections.",
       links: [
         {
           label: "GitHub",
@@ -343,8 +338,7 @@ export const portfolioContent: PortfolioDictionary = {
         },
       ],
     },
-    footer:
-      "Designed to be multilingual, maintainable, and ready for continuous deployment.",
+    footer: "Full-stack web developer and Computer Engineering student.",
   },
   es: {
     locale: "es",
@@ -366,44 +360,42 @@ export const portfolioContent: PortfolioDictionary = {
       { href: "#contact", label: "Contacto" },
     ],
     languageSwitcherLabel: "Idiomas",
+    theme: {
+      label: "Tema",
+      systemLabel: "Sistema",
+      lightLabel: "Claro",
+      darkLabel: "Oscuro",
+    },
     hero: {
-      eyebrow: "Next.js 16.3 + App Router + clean architecture",
-      title:
-        "Interfaces firmes, código ordenado y una presencia digital con identidad propia.",
+      title: "Hola, soy Afonso Machado.",
       description:
-        "Soy Afonso Machado, desarrollador full-stack enfocado en experiencias web responsivas, sistemas de componentes bien estructurados y bases de código listas para crecer sin perder claridad.",
+        "Estudiante de Ingeniería de Computación y desarrollador full-stack. Aquí están algunos de los proyectos y tecnologías que forman parte de mi trayectoria.",
       primaryCta: "Ver proyectos",
       secondaryCta: "Contactarme",
-      metrics: [
-        { value: "pt-BR", label: "idioma principal" },
-        { value: "EN / ES", label: "versiones adicionales" },
-        { value: "App Router", label: "base lista para Vercel" },
-      ],
     },
     about: {
       id: "about",
       eyebrow: "Sobre mí",
-      title:
-        "Construyo productos web con atención real a la estructura, la legibilidad y la experiencia.",
+      title: "Siempre aprendiendo y convirtiendo ideas en aplicaciones web.",
       paragraphs: [
-        "En su perfil público, Afonso se presenta como estudiante de Ingeniería de Computación, desarrollador web full-stack y alguien que busca ampliar continuamente su repertorio técnico.",
-        "Su interés pasa por front-end, back-end e interfaces que se sientan cuidadas en cada detalle. También explora el trabajo mobile y convierte referencias visuales en implementaciones coherentes.",
+        "Soy desarrollador web full-stack y estudiante de Ingeniería de Computación. Me gusta entender cómo funcionan las cosas, escribir código claro y crear experiencias útiles para quienes usan un producto.",
+        "Me interesan el front-end, el back-end y el desarrollo mobile. Este espacio reúne trabajos que representan lo que vengo aprendiendo y construyendo.",
       ],
       highlights: [
         {
           title: "Arquitectura limpia",
           description:
-            "Separación entre dominio, aplicación, infraestructura y presentación para facilitar mantenimiento y evolución.",
+            "Organización de código que ayuda a mantener aplicaciones comprensibles y listas para evolucionar.",
         },
         {
           title: "Dirección visual intencional",
           description:
-            "Layouts responsivos, tipografía expresiva e identidad propia en lugar de un clon genérico.",
+            "Interfaces responsivas con atención a la claridad, la consistencia y los detalles de interacción.",
         },
         {
           title: "Entrega práctica",
           description:
-            "Organizado para seguir iterando, con rutas por idioma y despliegue sencillo.",
+            "Proyectos que parten de una buena base y pueden recibir mejoras continuas.",
         },
       ],
     },
@@ -412,7 +404,7 @@ export const portfolioContent: PortfolioDictionary = {
       eyebrow: "Stack y enfoque",
       title: "Herramientas y áreas donde concentro la mayor parte de mi energía.",
       description:
-        "Next.js App Router con separación por capas para que el proyecto siga siendo mantenible, multilingüe y fácil de publicar.",
+        "Tecnologías que vengo utilizando en estudios y proyectos personales.",
       groups: [
         {
           title: "Front-end",
@@ -436,9 +428,9 @@ export const portfolioContent: PortfolioDictionary = {
       id: "projects",
       eyebrow: "Proyectos destacados",
       title:
-        "Una selección de repositorios públicos que muestra amplitud y ejecución.",
+        "Proyectos que desarrollé para practicar, explorar y evolucionar.",
       description:
-        "La sección toma como base los proyectos destacados del GitHub público y los presenta con una estructura más editorial.",
+        "Una selección de mis repositorios públicos en GitHub.",
       repositoryLabel: "Repositorio",
       openLabel: "Abrir repositorio",
       moreLabel: "Ver perfil completo en GitHub",
@@ -491,11 +483,11 @@ export const portfolioContent: PortfolioDictionary = {
       id: "contact",
       eyebrow: "Contacto",
       title:
-        "Si la idea necesita una interfaz fuerte y una base bien montada, conversemos.",
+        "Hablemos.",
       description:
-        "Este portafolio fue estructurado para representar mejor a Afonso hoy y seguir listo para futuras mejoras.",
+        "No dudes en ponerte en contacto o seguir mi trabajo en las redes.",
       availability:
-        "Disponible para oportunidades en front-end, full-stack y productos digitales.",
+        "Abierto a oportunidades y nuevas conexiones.",
       links: [
         {
           label: "GitHub",
@@ -514,7 +506,6 @@ export const portfolioContent: PortfolioDictionary = {
         },
       ],
     },
-    footer:
-      "Diseñado para ser multilingüe, mantenible y listo para despliegue continuo.",
+    footer: "Desarrollador web full-stack y estudiante de Ingeniería de Computación.",
   },
 };

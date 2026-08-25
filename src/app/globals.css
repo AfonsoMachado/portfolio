@@ -13,6 +13,47 @@
   --shadow: 0 24px 80px rgba(20, 35, 31, 0.12);
 }
 
+@media (prefers-color-scheme: dark) {
+  :root:not(.theme-light) {
+    --background: #101917;
+    --foreground: #e8f1ed;
+    --surface: rgba(21, 34, 31, 0.82);
+    --surface-strong: rgba(28, 43, 39, 0.94);
+    --line: rgba(232, 241, 237, 0.13);
+    --muted: #aebeb8;
+    --accent: #79d0c6;
+    --accent-soft: #1d4d47;
+    --accent-strong: #f09a68;
+    --shadow: 0 24px 80px rgba(0, 0, 0, 0.32);
+  }
+}
+
+:root.theme-dark {
+  --background: #101917;
+  --foreground: #e8f1ed;
+  --surface: rgba(21, 34, 31, 0.82);
+  --surface-strong: rgba(28, 43, 39, 0.94);
+  --line: rgba(232, 241, 237, 0.13);
+  --muted: #aebeb8;
+  --accent: #79d0c6;
+  --accent-soft: #1d4d47;
+  --accent-strong: #f09a68;
+  --shadow: 0 24px 80px rgba(0, 0, 0, 0.32);
+}
+
+:root.theme-light {
+  --background: #f6efe5;
+  --foreground: #14231f;
+  --surface: rgba(255, 250, 243, 0.78);
+  --surface-strong: rgba(255, 250, 243, 0.92);
+  --line: rgba(20, 35, 31, 0.1);
+  --muted: #52635e;
+  --accent: #0f766e;
+  --accent-soft: #d8f3ef;
+  --accent-strong: #c55c2b;
+  --shadow: 0 24px 80px rgba(20, 35, 31, 0.12);
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -33,9 +74,9 @@
 
 html {
   background:
-    radial-gradient(circle at top left, rgba(15, 118, 110, 0.18), transparent 32%),
-    radial-gradient(circle at right 20%, rgba(197, 92, 43, 0.16), transparent 26%),
-    linear-gradient(180deg, #fffaf3 0%, #f6efe5 45%, #efe3d3 100%);
+    radial-gradient(circle at top left, color-mix(in srgb, var(--accent) 18%, transparent), transparent 32%),
+    radial-gradient(circle at right 20%, color-mix(in srgb, var(--accent-strong) 16%, transparent), transparent 26%),
+    linear-gradient(180deg, color-mix(in srgb, var(--surface-strong) 92%, var(--background)) 0%, var(--background) 100%);
 }
 
 body {

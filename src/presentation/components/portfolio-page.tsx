@@ -2,6 +2,7 @@ import Link from "next/link";
 
 import type { PortfolioContent } from "@/core/domain/entities/portfolio";
 import { LanguageSwitcher } from "@/presentation/components/language-switcher";
+import { ThemeSwitcher } from "@/presentation/components/theme-switcher";
 import type { Locale } from "@/shared/i18n/config";
 
 type PortfolioPageProps = {
@@ -14,8 +15,8 @@ export function PortfolioPage({ content, locale }: PortfolioPageProps) {
     <main id="home" className="relative overflow-hidden">
       <div className="mx-auto flex min-h-screen w-full max-w-7xl flex-col px-5 pb-10 pt-5 sm:px-8 lg:px-10">
         <header className="sticky top-4 z-20 rounded-[28px] border border-line bg-surface/90 px-5 py-4 shadow-[0_16px_40px_rgba(20,35,31,0.08)] backdrop-blur-xl">
-          <div className="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
-            <div className="flex items-center justify-between gap-4">
+          <div className="flex flex-col gap-5 xl:flex-row xl:items-center xl:justify-between">
+            <div className="flex flex-wrap items-center justify-between gap-4">
               <div>
                 <p className="text-xs uppercase tracking-[0.3em] text-accent">
                   {content.brand.role}
@@ -24,7 +25,8 @@ export function PortfolioPage({ content, locale }: PortfolioPageProps) {
                   {content.brand.name}
                 </h1>
               </div>
-              <div className="lg:hidden">
+              <div className="flex items-center gap-2 xl:hidden">
+                <ThemeSwitcher labels={content.theme} />
                 <LanguageSwitcher
                   currentLocale={locale}
                   label={content.languageSwitcherLabel}
@@ -44,7 +46,8 @@ export function PortfolioPage({ content, locale }: PortfolioPageProps) {
               ))}
             </nav>
 
-            <div className="hidden lg:block">
+            <div className="hidden items-center gap-4 xl:flex">
+              <ThemeSwitcher labels={content.theme} />
               <LanguageSwitcher
                 currentLocale={locale}
                 label={content.languageSwitcherLabel}
@@ -55,10 +58,7 @@ export function PortfolioPage({ content, locale }: PortfolioPageProps) {
 
         <section className="grid flex-1 gap-6 py-8 lg:grid-cols-[1.35fr_0.9fr] lg:py-12">
           <div className="rounded-[36px] border border-line bg-surface px-6 py-8 shadow-[var(--shadow)] sm:px-8 sm:py-10">
-            <p className="text-xs uppercase tracking-[0.35em] text-accent">
-              {content.hero.eyebrow}
-            </p>
-            <div className="mt-6 max-w-3xl space-y-6">
+            <div className="max-w-3xl space-y-6">
               <h2 className="text-4xl font-semibold leading-tight text-foreground sm:text-5xl lg:text-6xl">
                 {content.hero.title}
               </h2>
@@ -80,22 +80,6 @@ export function PortfolioPage({ content, locale }: PortfolioPageProps) {
               >
                 {content.hero.secondaryCta}
               </a>
-            </div>
-
-            <div className="mt-12 grid gap-4 sm:grid-cols-3">
-              {content.hero.metrics.map((metric) => (
-                <div
-                  key={metric.label}
-                  className="rounded-[24px] border border-line bg-surface-strong p-4"
-                >
-                  <p className="font-mono text-sm uppercase tracking-[0.24em] text-accent">
-                    {metric.value}
-                  </p>
-                  <p className="mt-3 text-sm leading-6 text-muted">
-                    {metric.label}
-                  </p>
-                </div>
-              ))}
             </div>
           </div>
 
