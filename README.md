@@ -59,6 +59,8 @@ No extra environment variables are required for the current version.
 
 Pushes to `master` run lint and unit tests in GitHub Actions before creating a Vercel production deployment.
 
+Every pull request also runs lint and unit tests. The `master` branch requires this validation and an approved pull request before changes can be merged.
+
 Configure these repository secrets in `Settings > Secrets and variables > Actions`:
 
 - `VERCEL_TOKEN`: a Vercel access token.
