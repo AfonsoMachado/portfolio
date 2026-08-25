@@ -14,8 +14,23 @@ export function PortfolioPage({ content, locale }: PortfolioPageProps) {
   return (
     <main id="home" className="relative overflow-hidden">
       <div className="mx-auto flex min-h-screen w-full max-w-7xl flex-col px-5 pb-10 pt-5 sm:px-8 lg:px-10">
-        <header className="sticky top-4 z-20 rounded-[28px] border border-line bg-surface/90 px-5 py-4 shadow-[0_16px_40px_rgba(20,35,31,0.08)] backdrop-blur-xl">
-          <div className="flex flex-col gap-5 lg:grid lg:grid-cols-[minmax(0,1fr)_auto] lg:items-center xl:grid-cols-[230px_minmax(0,1fr)_auto] xl:gap-6">
+        <div className="flex items-center justify-between border-b border-line px-1 pb-3 font-mono text-xs uppercase tracking-[0.2em] text-muted sm:px-2">
+          <p className="flex items-center gap-2">
+            <span className="h-2 w-2 rounded-full bg-[#48c78e] shadow-[0_0_12px_rgba(72,199,142,0.8)]" />
+            <span className="hidden sm:inline">{content.contact.availability}</span>
+          </p>
+          <div className="flex items-center gap-3">
+            <ThemeSwitcher labels={content.theme} />
+            <LanguageSwitcher
+              currentLocale={locale}
+              label={content.languageSwitcherLabel}
+              showLabel={false}
+            />
+          </div>
+        </div>
+
+        <header className="sticky top-4 z-20 mt-4 rounded-[28px] border border-line bg-surface/90 px-5 py-4 shadow-[0_16px_40px_rgba(20,35,31,0.08)] backdrop-blur-xl">
+          <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
             <div>
               <div>
                 <p className="text-xs uppercase tracking-[0.3em] text-accent">
@@ -27,7 +42,7 @@ export function PortfolioPage({ content, locale }: PortfolioPageProps) {
               </div>
             </div>
 
-            <nav className="flex flex-wrap gap-2 text-sm text-muted lg:col-span-2 lg:flex-nowrap lg:justify-between xl:col-span-1 xl:col-start-2 xl:row-start-1">
+            <nav className="flex flex-wrap gap-2 text-sm text-muted lg:flex-nowrap">
               {content.navigation.map((item) => (
                 <a
                   key={item.href}
@@ -39,13 +54,6 @@ export function PortfolioPage({ content, locale }: PortfolioPageProps) {
               ))}
             </nav>
 
-            <div className="flex flex-wrap items-center gap-3 lg:justify-end">
-              <ThemeSwitcher labels={content.theme} />
-              <LanguageSwitcher
-                currentLocale={locale}
-                label={content.languageSwitcherLabel}
-              />
-            </div>
           </div>
         </header>
 

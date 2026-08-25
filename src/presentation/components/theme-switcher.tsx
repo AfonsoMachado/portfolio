@@ -37,6 +37,32 @@ function applyTheme(theme: Theme) {
   }
 }
 
+function ThemeIcon({ theme }: { theme: Theme }) {
+  if (theme === "light") {
+    return (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
+        <circle cx="12" cy="12" r="4" />
+        <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
+      </svg>
+    );
+  }
+
+  if (theme === "dark") {
+    return (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
+        <path d="M20.5 14.2A8.5 8.5 0 1 1 9.8 3.5 6.7 6.7 0 0 0 20.5 14.2Z" />
+      </svg>
+    );
+  }
+
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
+      <rect x="3" y="4" width="18" height="13" rx="2" />
+      <path d="M8 21h8M12 17v4" />
+    </svg>
+  );
+}
+
 export function ThemeSwitcher({ labels }: ThemeSwitcherProps) {
   const [theme, setTheme] = useState<Theme>(getStoredTheme);
 
@@ -57,27 +83,30 @@ export function ThemeSwitcher({ labels }: ThemeSwitcherProps) {
   ];
 
   return (
-    <div className="flex items-center gap-2" aria-label={labels.label}>
-      <span className="hidden text-xs uppercase tracking-[0.28em] text-muted xl:inline">
-        {labels.label}
-      </span>
-      <div className="flex rounded-full border border-line bg-surface-strong p-1">
+    <div
+      role="group"
+      aria-label={labels.label}
+      className="flex rounded-full border border-line bg-surface-strong p-1"
+    >
         {options.map((option) => (
           <button
             key={option.value}
             type="button"
             onClick={() => selectTheme(option.value)}
             aria-pressed={theme === option.value}
-            className={`rounded-full px-3 py-2 text-xs font-medium transition ${
+            aria-label={option.label}
+            title={option.label}
+            className={`grid h-8 w-8 place-items-center rounded-full transition ${
               theme === option.value
                 ? "bg-foreground text-background"
                 : "text-muted hover:text-foreground"
             }`}
           >
-            {option.label}
+            <span className="h-4 w-4">
+              <ThemeIcon theme={option.value} />
+            </span>
           </button>
         ))}
-      </div>
     </div>
   );
 }
