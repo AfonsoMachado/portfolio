@@ -130,7 +130,7 @@ export function PortfolioPage({ content, locale }: PortfolioPageProps) {
           id={content.about.id}
           className="grid gap-6 py-8 lg:grid-cols-[1.05fr_1fr]"
         >
-          <div className="rounded-[32px] border border-line bg-surface px-6 py-8 shadow-(--shadow) sm:px-8">
+          <div className="rounded-4xl border border-line bg-surface px-6 py-8 shadow-(--shadow) sm:px-8">
             <p className="text-xs uppercase tracking-[0.32em] text-accent">
               {content.about.eyebrow}
             </p>
@@ -162,7 +162,7 @@ export function PortfolioPage({ content, locale }: PortfolioPageProps) {
         </section>
 
         <section id={content.stack.id} className="py-8">
-          <div className="rounded-[32px] border border-line bg-surface px-6 py-8 shadow-(--shadow) sm:px-8">
+          <div className="rounded-4xl border border-line bg-surface px-6 py-8 shadow-(--shadow) sm:px-8">
             <p className="text-xs uppercase tracking-[0.32em] text-accent">
               {content.stack.eyebrow}
             </p>
@@ -291,7 +291,7 @@ export function PortfolioPage({ content, locale }: PortfolioPageProps) {
                     href={link.href}
                     target="_blank"
                     rel="noreferrer"
-                    className="rounded-[24px] border border-white/10 bg-white/5 p-5 transition hover:border-[#8fd5cd]/40 hover:bg-white/8"
+                    className="rounded-3xl border border-white/10 bg-white/5 p-5 transition hover:border-[#8fd5cd]/40 hover:bg-white/8"
                   >
                     <p className="text-lg font-semibold">{link.label}</p>
                     <p className="mt-2 text-sm leading-7 text-[#cfdbd7]">
