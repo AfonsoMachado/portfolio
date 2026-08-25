@@ -35,9 +35,15 @@ src/
 ```bash
 npm run dev
 npm run lint
+npm run format
+npm run format:check
+npm run test
+npm run test:run
 npm run build
 npm run start
 ```
+
+`npm run test` executa os testes em modo watch. Use `npm run test:run` para uma unica execucao, como em ambientes de CI.
 
 ## Deploy
 
