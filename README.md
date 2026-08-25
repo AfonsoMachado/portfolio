@@ -54,3 +54,13 @@ This project is ready for Vercel:
 3. Use the default build command: `npm run build`.
 
 No extra environment variables are required for the current version.
+
+### Continuous deployment
+
+Pushes to `master` run lint and unit tests in GitHub Actions before creating a Vercel production deployment.
+
+Configure these repository secrets in `Settings > Secrets and variables > Actions`:
+
+- `VERCEL_TOKEN`: a Vercel access token.
+- `VERCEL_ORG_ID`: the `orgId` from the local `.vercel/project.json` file.
+- `VERCEL_PROJECT_ID`: the `projectId` from the local `.vercel/project.json` file.
