@@ -30,7 +30,7 @@ export function LanguageSwitcher({
               href={`/${locale}`}
               className={`rounded-full px-3 py-2 text-xs font-medium uppercase tracking-[0.2em] transition ${
                 isActive
-                  ? "bg-foreground text-background"
+                  ? "bg-[#14312f] text-[#f8f1e7]"
                   : "text-muted hover:text-foreground"
               }`}
             >

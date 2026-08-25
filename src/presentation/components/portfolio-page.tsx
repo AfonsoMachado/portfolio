@@ -71,7 +71,7 @@ export function PortfolioPage({ content, locale }: PortfolioPageProps) {
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
               <a
                 href="#projects"
-                className="inline-flex items-center justify-center rounded-full bg-foreground px-6 py-3 text-sm font-medium text-background transition hover:bg-accent-strong"
+                className="inline-flex items-center justify-center rounded-full bg-[#14312f] px-6 py-3 text-sm font-medium text-[#f8f1e7] transition hover:bg-[#23524c]"
               >
                 {content.hero.primaryCta}
               </a>
