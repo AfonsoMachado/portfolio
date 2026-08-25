@@ -40,6 +40,7 @@ export type PortfolioContent = {
     location: string;
   };
   navigation: NavItem[];
+  menuLabel: string;
   languageSwitcherLabel: string;
   theme: {
     label: string;

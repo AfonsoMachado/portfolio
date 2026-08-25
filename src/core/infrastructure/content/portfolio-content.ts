@@ -23,6 +23,7 @@ export const portfolioContent: PortfolioDictionary = {
       { href: "#projects", label: "Projetos" },
       { href: "#contact", label: "Contato" },
     ],
+    menuLabel: "Menu",
     languageSwitcherLabel: "Idiomas",
     theme: {
       label: "Tema",
@@ -191,6 +192,7 @@ export const portfolioContent: PortfolioDictionary = {
       { href: "#projects", label: "Projects" },
       { href: "#contact", label: "Contact" },
     ],
+    menuLabel: "Menu",
     languageSwitcherLabel: "Languages",
     theme: {
       label: "Theme",
@@ -359,6 +361,7 @@ export const portfolioContent: PortfolioDictionary = {
       { href: "#projects", label: "Proyectos" },
       { href: "#contact", label: "Contacto" },
     ],
+    menuLabel: "Menú",
     languageSwitcherLabel: "Idiomas",
     theme: {
       label: "Tema",

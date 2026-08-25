@@ -2,6 +2,7 @@ import Link from "next/link";
 
 import type { PortfolioContent } from "@/core/domain/entities/portfolio";
 import { LanguageSwitcher } from "@/presentation/components/language-switcher";
+import { MobileNavigation } from "@/presentation/components/mobile-navigation";
 import { Reveal } from "@/presentation/components/reveal";
 import { ThemeSwitcher } from "@/presentation/components/theme-switcher";
 import type { Locale } from "@/shared/i18n/config";
@@ -32,7 +33,7 @@ export function PortfolioPage({ content, locale }: PortfolioPageProps) {
 
         <header className="sticky top-4 z-20 mt-4 rounded-[28px] border border-line bg-surface/90 px-5 py-4 shadow-(--header-shadow) backdrop-blur-xl">
           <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
-            <div>
+            <div className="flex w-full items-center justify-between gap-4 lg:w-auto">
               <div>
                 <p className="text-xs uppercase tracking-[0.3em] text-accent">
                   {content.brand.role}
@@ -41,9 +42,15 @@ export function PortfolioPage({ content, locale }: PortfolioPageProps) {
                   {content.brand.name}
                 </h1>
               </div>
+              <div className="lg:hidden">
+                <MobileNavigation
+                  items={content.navigation}
+                  label={content.menuLabel}
+                />
+              </div>
             </div>
 
-            <nav className="flex flex-wrap gap-2 text-sm text-muted lg:flex-nowrap">
+            <nav className="hidden gap-2 text-sm text-muted lg:flex lg:flex-nowrap">
               {content.navigation.map((item) => (
                 <a
                   key={item.href}
