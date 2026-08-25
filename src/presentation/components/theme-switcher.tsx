@@ -28,7 +28,9 @@ function getStoredTheme(): Theme {
 
   const savedTheme = window.localStorage.getItem(storageKey);
 
-  return savedTheme === "light" || savedTheme === "dark" || savedTheme === "system"
+  return savedTheme === "light" ||
+    savedTheme === "dark" ||
+    savedTheme === "system"
     ? savedTheme
     : "system";
 }
@@ -80,25 +82,24 @@ export function ThemeSwitcher({ labels }: ThemeSwitcherProps) {
       aria-label={labels.label}
       className="flex rounded-full border border-line bg-surface-strong p-1"
     >
-        {options.map((option) => (
-          <button
-            key={option.value}
-            type="button"
-            onClick={() => selectTheme(option.value)}
-            aria-pressed={theme === option.value}
-            aria-label={option.label}
-            title={option.label}
-            className={`grid h-8 w-8 place-items-center rounded-full transition ${
-              theme === option.value
-                ? "bg-action text-on-action"
-                : "text-muted hover:text-foreground"
+      {options.map((option) => (
+        <button
+          key={option.value}
+          type="button"
+          onClick={() => selectTheme(option.value)}
+          aria-pressed={theme === option.value}
+          aria-label={option.label}
+          title={option.label}
+          className={`grid h-8 w-8 place-items-center rounded-full cursor-pointer transition ${theme === option.value
+              ? "bg-action text-on-action"
+              : "text-muted hover:text-foreground"
             }`}
-          >
-            <span className="h-4 w-4">
-              <ThemeIcon theme={option.value} />
-            </span>
-          </button>
-        ))}
+        >
+          <span className="h-4 w-4">
+            <ThemeIcon theme={option.value} />
+          </span>
+        </button>
+      ))}
     </div>
   );
 }

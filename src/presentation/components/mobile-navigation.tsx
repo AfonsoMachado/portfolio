@@ -24,7 +24,7 @@ export function MobileNavigation({ items, label }: MobileNavigationProps) {
         aria-expanded={isOpen}
         aria-controls="mobile-navigation"
         onClick={() => setIsOpen((open) => !open)}
-        className="grid h-11 w-11 place-items-center rounded-full border border-line bg-surface-strong text-foreground transition hover:bg-accent-soft"
+        className="grid h-11 w-11 place-items-center rounded-full border border-line bg-surface-strong text-foreground transition cursor-pointer hover:bg-accent-soft"
       >
         {isOpen ? (
           <CloseIcon className="h-5 w-5" />
@@ -36,11 +36,10 @@ export function MobileNavigation({ items, label }: MobileNavigationProps) {
       <nav
         id="mobile-navigation"
         aria-label={label}
-        className={`absolute right-0 top-full z-30 mt-3 w-56 rounded-3xl border border-line bg-surface-strong p-2 shadow-(--header-shadow) transition-all duration-200 ${
-          isOpen
+        className={`absolute right-0 top-full z-30 mt-3 w-56 rounded-3xl border border-line bg-surface-strong p-2 shadow-(--header-shadow) transition-all duration-200 ${isOpen
             ? "visible translate-y-0 opacity-100"
             : "invisible -translate-y-2 opacity-0"
-        }`}
+          }`}
       >
         {items.map((item) => (
           <a
