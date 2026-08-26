@@ -108,43 +108,31 @@ export const portfolioContent: PortfolioDictionary = {
           title: "calculator-react",
           description:
             "Calculadora inspirada na interface do macOS, construída em React com foco em composição de interface e comportamento previsível.",
-          href: "https://github.com/AfonsoMachado/calculator-react",
-          stack: ["React", "JavaScript", "UI"],
         },
         {
           title: "nubank-clone",
           description:
             "Clone da interface mobile do Nubank em React Native, exercitando fidelidade visual e organização de componentes.",
-          href: "https://github.com/AfonsoMachado/nubank-clone",
-          stack: ["React Native", "JavaScript", "Mobile UI"],
         },
         {
           title: "flappy-bird",
           description:
             "Releitura do jogo Flappy Bird com HTML, CSS e JavaScript, demonstrando lógica de jogo e manipulação do DOM.",
-          href: "https://github.com/AfonsoMachado/flappy-bird",
-          stack: ["HTML", "CSS", "JavaScript"],
         },
         {
           title: "crud-angular",
           description:
             "CRUD em Angular com persistência em JSON Server, explorando fluxo de dados e estrutura de aplicação front-end.",
-          href: "https://github.com/AfonsoMachado/crud-angular",
-          stack: ["Angular", "TypeScript", "JSON Server"],
         },
         {
           title: "metalflix",
           description:
             "Catálogo de vídeos com temática metal criado durante a Imersão React, combinando conteúdo, navegação e personalidade visual.",
-          href: "https://github.com/AfonsoMachado/metalflix",
-          stack: ["React", "JavaScript", "Content UI"],
         },
         {
           title: "proffy-nlw",
           description:
             "Projeto realizado durante a Next Level Week com foco em experiência educacional, formulários e organização de fluxo entre telas.",
-          href: "https://github.com/AfonsoMachado/proffy-nlw",
-          stack: ["TypeScript", "Node.js", "Education"],
         },
       ],
     },
@@ -279,43 +267,31 @@ export const portfolioContent: PortfolioDictionary = {
           title: "calculator-react",
           description:
             "A macOS-inspired calculator in React, focused on interface composition and predictable behavior.",
-          href: "https://github.com/AfonsoMachado/calculator-react",
-          stack: ["React", "JavaScript", "UI"],
         },
         {
           title: "nubank-clone",
           description:
             "A Nubank mobile interface clone built with React Native, exercising visual fidelity and component organization.",
-          href: "https://github.com/AfonsoMachado/nubank-clone",
-          stack: ["React Native", "JavaScript", "Mobile UI"],
         },
         {
           title: "flappy-bird",
           description:
             "A Flappy Bird recreation with HTML, CSS, and JavaScript, showing game logic and DOM manipulation.",
-          href: "https://github.com/AfonsoMachado/flappy-bird",
-          stack: ["HTML", "CSS", "JavaScript"],
         },
         {
           title: "crud-angular",
           description:
             "An Angular CRUD backed by JSON Server, exploring data flow and front-end application structure.",
-          href: "https://github.com/AfonsoMachado/crud-angular",
-          stack: ["Angular", "TypeScript", "JSON Server"],
         },
         {
           title: "metalflix",
           description:
             "A metal-themed video catalog created during React immersion training, mixing content structure and visual personality.",
-          href: "https://github.com/AfonsoMachado/metalflix",
-          stack: ["React", "JavaScript", "Content UI"],
         },
         {
           title: "proffy-nlw",
           description:
             "An educational project from Next Level Week centered on forms, screen flows, and user experience.",
-          href: "https://github.com/AfonsoMachado/proffy-nlw",
-          stack: ["TypeScript", "Node.js", "Education"],
         },
       ],
     },
@@ -450,43 +426,31 @@ export const portfolioContent: PortfolioDictionary = {
           title: "calculator-react",
           description:
             "Calculadora inspirada en macOS hecha con React, enfocada en composición de interfaz y comportamiento predecible.",
-          href: "https://github.com/AfonsoMachado/calculator-react",
-          stack: ["React", "JavaScript", "UI"],
         },
         {
           title: "nubank-clone",
           description:
             "Clon de la interfaz móvil de Nubank con React Native, ejercitando fidelidad visual y organización de componentes.",
-          href: "https://github.com/AfonsoMachado/nubank-clone",
-          stack: ["React Native", "JavaScript", "Mobile UI"],
         },
         {
           title: "flappy-bird",
           description:
             "Recreación de Flappy Bird con HTML, CSS y JavaScript, mostrando lógica de juego y manipulación del DOM.",
-          href: "https://github.com/AfonsoMachado/flappy-bird",
-          stack: ["HTML", "CSS", "JavaScript"],
         },
         {
           title: "crud-angular",
           description:
             "CRUD en Angular con JSON Server, explorando flujo de datos y estructura de aplicación front-end.",
-          href: "https://github.com/AfonsoMachado/crud-angular",
-          stack: ["Angular", "TypeScript", "JSON Server"],
         },
         {
           title: "metalflix",
           description:
             "Catálogo de videos con temática metal creado durante una inmersión en React, combinando contenido e identidad visual.",
-          href: "https://github.com/AfonsoMachado/metalflix",
-          stack: ["React", "JavaScript", "Content UI"],
         },
         {
           title: "proffy-nlw",
           description:
             "Proyecto educativo de Next Level Week centrado en formularios, flujos entre pantallas y experiencia de usuario.",
-          href: "https://github.com/AfonsoMachado/proffy-nlw",
-          stack: ["TypeScript", "Node.js", "Education"],
         },
       ],
     },

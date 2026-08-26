@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import type { GitHubProfile } from "@/core/domain/entities/github-profile";
+import type { GitHubRepository } from "@/core/domain/entities/github-repository";
 import type { PortfolioContent } from "@/core/domain/entities/portfolio";
 import { LanguageSwitcher } from "@/presentation/components/language-switcher";
 import { MobileNavigation } from "@/presentation/components/mobile-navigation";
@@ -12,14 +13,20 @@ import type { Locale } from "@/shared/i18n/config";
 type PortfolioPageProps = {
   content: PortfolioContent;
   githubProfile: GitHubProfile | null;
+  githubRepositories: GitHubRepository[];
   locale: Locale;
 };
 
 export function PortfolioPage({
   content,
   githubProfile,
+  githubRepositories,
   locale,
 }: PortfolioPageProps) {
+  const repositoriesByName = new Map(
+    githubRepositories.map((repository) => [repository.name, repository]),
+  );
+
   return (
     <main id="home" className="relative overflow-hidden">
       <div className="mx-auto flex min-h-screen w-full max-w-7xl flex-col px-5 pb-10 pt-5 sm:px-8 lg:px-10">
@@ -267,45 +274,57 @@ export function PortfolioPage({
             </div>
 
             <div className="mt-8 grid gap-4 lg:grid-cols-2 xl:grid-cols-3">
-              {content.projects.items.map((project) => (
-                <article
-                  key={project.title}
-                  className="flex h-full flex-col rounded-[30px] border border-line bg-surface px-6 py-6 shadow-(--shadow)"
-                >
-                  <div className="flex items-center justify-between gap-4">
-                    <p className="font-mono text-xs uppercase tracking-[0.3em] text-accent">
-                      {content.projects.repositoryLabel}
-                    </p>
-                    <span className="rounded-full border border-line px-3 py-1 text-xs text-muted">
-                      GitHub
-                    </span>
-                  </div>
-                  <h3 className="mt-5 text-2xl font-semibold text-foreground">
-                    {project.title}
-                  </h3>
-                  <p className="mt-4 flex-1 text-sm leading-7 text-muted">
-                    {project.description}
-                  </p>
-                  <div className="mt-6 flex flex-wrap gap-2">
-                    {project.stack.map((item) => (
-                      <span
-                        key={item}
-                        className="rounded-full bg-accent-soft px-3 py-1 text-xs font-medium text-foreground"
-                      >
-                        {item}
-                      </span>
-                    ))}
-                  </div>
-                  <Link
-                    href={project.href}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="mt-8 inline-flex w-fit rounded-full border border-line px-4 py-2 text-sm font-medium transition hover:bg-accent-soft"
+              {content.projects.items.map((project) => {
+                const repository = repositoriesByName.get(project.title);
+                const technologies = repository
+                  ? [repository.primaryLanguage, ...repository.topics].filter(
+                      (technology): technology is string => Boolean(technology),
+                    )
+                  : [];
+                return (
+                  <article
+                    key={project.title}
+                    className="flex h-full flex-col rounded-[30px] border border-line bg-surface px-6 py-6 shadow-(--shadow)"
                   >
-                    {content.projects.openLabel}
-                  </Link>
-                </article>
-              ))}
+                    <div className="flex items-center justify-between gap-4">
+                      <p className="font-mono text-xs uppercase tracking-[0.3em] text-accent">
+                        {content.projects.repositoryLabel}
+                      </p>
+                      <span className="rounded-full border border-line px-3 py-1 text-xs text-muted">
+                        GitHub
+                      </span>
+                    </div>
+                    <h3 className="mt-5 text-2xl font-semibold text-foreground">
+                      {project.title}
+                    </h3>
+                    <p className="mt-4 flex-1 text-sm leading-7 text-muted">
+                      {project.description}
+                    </p>
+                    {technologies.length > 0 ? (
+                      <div className="mt-6 flex flex-wrap gap-2">
+                        {technologies.map((technology) => (
+                          <span
+                            key={technology}
+                            className="rounded-full bg-accent-soft px-3 py-1 text-xs font-medium text-foreground"
+                          >
+                            {technology}
+                          </span>
+                        ))}
+                      </div>
+                    ) : null}
+                    {repository ? (
+                      <Link
+                        href={repository.profileUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="mt-8 inline-flex w-fit rounded-full border border-line px-4 py-2 text-sm font-medium transition hover:bg-accent-soft"
+                      >
+                        {content.projects.openLabel}
+                      </Link>
+                    ) : null}
+                  </article>
+                );
+              })}
             </div>
           </section>
         </Reveal>

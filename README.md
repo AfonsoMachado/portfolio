@@ -73,6 +73,8 @@ Vercel Speed Insights is integrated through `@vercel/speed-insights`. Enable it 
 
 The identity card retrieves the public profile of `AfonsoMachado` from the GitHub REST API and displays the current avatar. The response is cached for 24 hours and the initials are shown if the API is unavailable.
 
+The featured projects section also enriches the curated repositories with their primary language and topics. This request is cached for 24 hours and preserves localized project copy if the API is unavailable.
+
 ### Continuous deployment
 
 Pushes to `master` run lint and unit tests in GitHub Actions before creating a Vercel production deployment.

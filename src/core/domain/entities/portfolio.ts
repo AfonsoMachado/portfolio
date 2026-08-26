@@ -18,8 +18,6 @@ export type SkillGroup = {
 export type Project = {
   title: string;
   description: string;
-  href: string;
-  stack: string[];
 };
 
 export type ContactLink = {
