@@ -104,6 +104,12 @@
 }
 
 html {
+  min-height: 100%;
+  background: var(--background);
+}
+
+body {
+  min-height: 100dvh;
   background:
     radial-gradient(
       circle at top left,
@@ -120,9 +126,7 @@ html {
       color-mix(in srgb, var(--surface-strong) 92%, var(--background)) 0%,
       var(--background) 100%
     );
-}
-
-body {
+  background-attachment: fixed;
   color: var(--foreground);
   font-family: var(--font-sans);
 }

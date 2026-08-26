@@ -13,7 +13,7 @@ export const portfolioContent: PortfolioDictionary = {
     },
     brand: {
       name: "Afonso Machado",
-      role: "Desenvolvedor web full-stack",
+      role: "Desenvolvedor full-stack",
       location: "Feira de Santana, Bahia, Brasil",
     },
     navigation: [
@@ -34,7 +34,7 @@ export const portfolioContent: PortfolioDictionary = {
     hero: {
       title: "Olá, eu sou Afonso Machado.",
       description:
-        "Estudante de Engenharia de Computação e desenvolvedor full-stack. Aqui estão alguns dos projetos e tecnologias que fazem parte da minha trajetória.",
+        "Formado em Engenharia de Computação e desenvolvedor full-stack. Aqui estão alguns dos projetos e tecnologias que fazem parte da minha trajetória.",
       primaryCta: "Ver projetos",
       secondaryCta: "Entrar em contato",
     },
@@ -44,7 +44,7 @@ export const portfolioContent: PortfolioDictionary = {
       title:
         "Em constante aprendizado, transformando ideias em aplicações web.",
       paragraphs: [
-        "Sou desenvolvedor web full-stack e estudante de Engenharia de Computação. Gosto de entender como as coisas funcionam, escrever código claro e entregar experiências úteis para quem usa o produto.",
+        "Sou desenvolvedor full-stack formado em Engenharia de Computação. Gosto de entender como as coisas funcionam, escrever código claro e entregar experiências úteis para quem usa o produto.",
         "Tenho interesse em desenvolvimento front-end, back-end e mobile. Este espaço reúne trabalhos que representam o que venho aprendendo e construindo.",
       ],
       highlights: [
@@ -162,7 +162,7 @@ export const portfolioContent: PortfolioDictionary = {
       ],
     },
     footer:
-      "Desenvolvedor web full-stack e estudante de Engenharia de Computação.",
+      "Desenvolvedor full-stack formado em Engenharia de Computação.",
   },
   en: {
     locale: "en",
@@ -173,7 +173,7 @@ export const portfolioContent: PortfolioDictionary = {
     },
     brand: {
       name: "Afonso Machado",
-      role: "Full-stack web developer",
+      role: "Full-stack developer",
       location: "Feira de Santana, Bahia, Brazil",
     },
     navigation: [
@@ -194,7 +194,7 @@ export const portfolioContent: PortfolioDictionary = {
     hero: {
       title: "Hi, I am Afonso Machado.",
       description:
-        "Computer Engineering student and full-stack developer. Here are some of the projects and technologies that are part of my journey.",
+        "Computer Engineering graduate and full-stack developer. Here are some of the projects and technologies that are part of my journey.",
       primaryCta: "See projects",
       secondaryCta: "Get in touch",
     },
@@ -203,7 +203,7 @@ export const portfolioContent: PortfolioDictionary = {
       eyebrow: "About",
       title: "Always learning and turning ideas into web applications.",
       paragraphs: [
-        "I am a full-stack web developer and a Computer Engineering student. I enjoy understanding how things work, writing clear code, and delivering useful experiences for product users.",
+        "I am a full-stack developer with a degree in Computer Engineering. I enjoy understanding how things work, writing clear code, and delivering useful experiences for product users.",
         "I am interested in front-end, back-end, and mobile development. This space brings together work that represents what I have been learning and building.",
       ],
       highlights: [
@@ -320,7 +320,7 @@ export const portfolioContent: PortfolioDictionary = {
         },
       ],
     },
-    footer: "Full-stack web developer and Computer Engineering student.",
+    footer: "Full-stack developer with a degree in Computer Engineering.",
   },
   es: {
     locale: "es",
@@ -331,7 +331,7 @@ export const portfolioContent: PortfolioDictionary = {
     },
     brand: {
       name: "Afonso Machado",
-      role: "Desarrollador web full-stack",
+      role: "Desarrollador full-stack",
       location: "Feira de Santana, Bahia, Brasil",
     },
     navigation: [
@@ -352,7 +352,7 @@ export const portfolioContent: PortfolioDictionary = {
     hero: {
       title: "Hola, soy Afonso Machado.",
       description:
-        "Estudiante de Ingeniería de Computación y desarrollador full-stack. Aquí están algunos de los proyectos y tecnologías que forman parte de mi trayectoria.",
+        "Graduado en Ingeniería de Computación y desarrollador full-stack. Aquí están algunos de los proyectos y tecnologías que forman parte de mi trayectoria.",
       primaryCta: "Ver proyectos",
       secondaryCta: "Contactarme",
     },
@@ -361,7 +361,7 @@ export const portfolioContent: PortfolioDictionary = {
       eyebrow: "Sobre mí",
       title: "Siempre aprendiendo y convirtiendo ideas en aplicaciones web.",
       paragraphs: [
-        "Soy desarrollador web full-stack y estudiante de Ingeniería de Computación. Me gusta entender cómo funcionan las cosas, escribir código claro y crear experiencias útiles para quienes usan un producto.",
+        "Soy desarrollador full-stack graduado en Ingeniería de Computación. Me gusta entender cómo funcionan las cosas, escribir código claro y crear experiencias útiles para quienes usan un producto.",
         "Me interesan el front-end, el back-end y el desarrollo mobile. Este espacio reúne trabajos que representan lo que vengo aprendiendo y construyendo.",
       ],
       highlights: [
@@ -480,6 +480,6 @@ export const portfolioContent: PortfolioDictionary = {
       ],
     },
     footer:
-      "Desarrollador web full-stack y estudiante de Ingeniería de Computación.",
+      "Desarrollador full-stack graduado en Ingeniería de Computación.",
   },
 };
