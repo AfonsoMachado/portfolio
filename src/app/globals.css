@@ -5,6 +5,7 @@
   --foreground: #14231f;
   --surface: rgba(255, 250, 243, 0.78);
   --surface-strong: rgba(255, 250, 243, 0.92);
+  --header-surface: #fffaf3;
   --line: rgba(20, 35, 31, 0.1);
   --muted: #52635e;
   --accent: #0f766e;
@@ -36,6 +37,7 @@
     --foreground: #e8f1ed;
     --surface: rgba(21, 34, 31, 0.82);
     --surface-strong: rgba(28, 43, 39, 0.94);
+    --header-surface: #1c2b27;
     --line: rgba(232, 241, 237, 0.13);
     --muted: #aebeb8;
     --accent: #79d0c6;
@@ -50,6 +52,7 @@
   --foreground: #e8f1ed;
   --surface: rgba(21, 34, 31, 0.82);
   --surface-strong: rgba(28, 43, 39, 0.94);
+  --header-surface: #1c2b27;
   --line: rgba(232, 241, 237, 0.13);
   --muted: #aebeb8;
   --accent: #79d0c6;
@@ -63,6 +66,7 @@
   --foreground: #14231f;
   --surface: rgba(255, 250, 243, 0.78);
   --surface-strong: rgba(255, 250, 243, 0.92);
+  --header-surface: #fffaf3;
   --line: rgba(20, 35, 31, 0.1);
   --muted: #52635e;
   --accent: #0f766e;
@@ -76,6 +80,7 @@
   --color-foreground: var(--foreground);
   --color-surface: var(--surface);
   --color-surface-strong: var(--surface-strong);
+  --color-header-surface: var(--header-surface);
   --color-line: var(--line);
   --color-muted: var(--muted);
   --color-accent: var(--accent);

@@ -7,16 +7,14 @@ import {
   ContactPlatform,
   type PortfolioContent,
 } from "@/core/domain/entities/portfolio";
-import { LanguageSwitcher } from "@/presentation/components/language-switcher";
 import {
   GitHubIcon,
   InstagramIcon,
   LinkedInIcon,
 } from "@/presentation/components/icons/interface-icons";
-import { MobileNavigation } from "@/presentation/components/mobile-navigation";
+import { PortfolioHeader } from "@/presentation/components/portfolio-header";
 import { ProjectCard } from "@/presentation/components/project-card";
 import { Reveal } from "@/presentation/components/reveal";
-import { ThemeSwitcher } from "@/presentation/components/theme-switcher";
 import { githubProfileUrl } from "@/shared/config/github";
 import type { Locale } from "@/shared/i18n/config";
 
@@ -44,57 +42,9 @@ export function PortfolioPage({
   );
 
   return (
-    <main id="home" className="relative overflow-hidden">
+    <main id="home" className="relative">
       <div className="mx-auto flex min-h-screen w-full max-w-7xl flex-col px-5 pb-10 pt-5 sm:px-8 lg:px-10">
-        <div className="flex items-center justify-between border-b border-line px-1 pb-3 font-mono text-xs uppercase tracking-[0.2em] text-muted sm:px-2">
-          <p className="flex items-center gap-2">
-            <span className="h-2 w-2 rounded-full bg-status shadow-(--status-shadow)" />
-            <span className="hidden sm:inline">
-              {content.contact.availability}
-            </span>
-          </p>
-          <div className="flex items-center gap-3">
-            <ThemeSwitcher labels={content.theme} />
-            <LanguageSwitcher
-              currentLocale={locale}
-              label={content.languageSwitcherLabel}
-              showLabel={false}
-            />
-          </div>
-        </div>
-
-        <header className="sticky top-4 z-20 mt-4 rounded-[28px] border border-line bg-surface/90 px-5 py-4 shadow-(--header-shadow) backdrop-blur-xl">
-          <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
-            <div className="flex w-full items-center justify-between gap-4 lg:w-auto">
-              <div>
-                <p className="text-xs uppercase tracking-[0.3em] text-accent">
-                  {content.brand.role}
-                </p>
-                <h1 className="text-lg font-semibold text-foreground">
-                  {content.brand.name}
-                </h1>
-              </div>
-              <div className="lg:hidden">
-                <MobileNavigation
-                  items={content.navigation}
-                  label={content.menuLabel}
-                />
-              </div>
-            </div>
-
-            <nav className="hidden gap-2 text-sm text-muted lg:flex lg:flex-nowrap">
-              {content.navigation.map((item) => (
-                <a
-                  key={item.href}
-                  href={item.href}
-                  className="rounded-full px-3 py-2 transition hover:bg-accent-soft hover:text-foreground"
-                >
-                  {item.label}
-                </a>
-              ))}
-            </nav>
-          </div>
-        </header>
+        <PortfolioHeader content={content} locale={locale} />
 
         <Reveal>
           <section className="grid flex-1 gap-6 py-8 lg:grid-cols-[1.35fr_0.9fr] lg:py-12">
