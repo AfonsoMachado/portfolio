@@ -8,8 +8,17 @@ import { MobileNavigation } from "@/presentation/components/mobile-navigation";
 import { ThemeSwitcher } from "@/presentation/components/theme-switcher";
 import type { Locale } from "@/shared/i18n/config";
 
+export type PortfolioHeaderContent = {
+  brand: Pick<PortfolioContent["brand"], "name" | "role">;
+  contact: Pick<PortfolioContent["contact"], "availability">;
+  languageSwitcherLabel: PortfolioContent["languageSwitcherLabel"];
+  menuLabel: PortfolioContent["menuLabel"];
+  navigation: PortfolioContent["navigation"];
+  theme: PortfolioContent["theme"];
+};
+
 type PortfolioHeaderProps = {
-  content: PortfolioContent;
+  content: PortfolioHeaderContent;
   locale: Locale;
 };
 

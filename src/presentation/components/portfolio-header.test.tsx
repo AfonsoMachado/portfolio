@@ -1,8 +1,10 @@
 import { cleanup, fireEvent, render, screen } from "@testing-library/react";
 import { afterEach, describe, expect, it } from "vitest";
 
-import type { PortfolioContent } from "@/core/domain/entities/portfolio";
-import { PortfolioHeader } from "@/presentation/components/portfolio-header";
+import {
+  PortfolioHeader,
+  type PortfolioHeaderContent,
+} from "@/presentation/components/portfolio-header";
 
 const content = {
   brand: {
@@ -19,7 +21,7 @@ const content = {
     lightLabel: "Light",
     systemLabel: "System",
   },
-} as PortfolioContent;
+} satisfies PortfolioHeaderContent;
 
 afterEach(() => {
   cleanup();
