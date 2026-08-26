@@ -3,14 +3,28 @@ import Link from "next/link";
 
 import type { GitHubProfile } from "@/core/domain/entities/github-profile";
 import type { GitHubRepository } from "@/core/domain/entities/github-repository";
-import type { PortfolioContent } from "@/core/domain/entities/portfolio";
+import {
+  ContactPlatform,
+  type PortfolioContent,
+} from "@/core/domain/entities/portfolio";
 import { LanguageSwitcher } from "@/presentation/components/language-switcher";
+import {
+  GitHubIcon,
+  InstagramIcon,
+  LinkedInIcon,
+} from "@/presentation/components/icons/interface-icons";
 import { MobileNavigation } from "@/presentation/components/mobile-navigation";
 import { ProjectCard } from "@/presentation/components/project-card";
 import { Reveal } from "@/presentation/components/reveal";
 import { ThemeSwitcher } from "@/presentation/components/theme-switcher";
 import { githubProfileUrl } from "@/shared/config/github";
 import type { Locale } from "@/shared/i18n/config";
+
+const contactIcons = {
+  [ContactPlatform.GitHub]: GitHubIcon,
+  [ContactPlatform.Instagram]: InstagramIcon,
+  [ContactPlatform.LinkedIn]: LinkedInIcon,
+} satisfies Record<ContactPlatform, typeof GitHubIcon>;
 
 type PortfolioPageProps = {
   content: PortfolioContent;
@@ -308,20 +322,27 @@ export function PortfolioPage({
                 </div>
 
                 <div className="grid gap-4">
-                  {content.contact.links.map((link) => (
-                    <Link
-                      key={link.href}
-                      href={link.href}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="rounded-3xl border border-white/10 bg-white/5 p-5 transition hover:border-contact-accent/40 hover:bg-white/8"
-                    >
-                      <p className="text-lg font-semibold">{link.label}</p>
-                      <p className="mt-2 text-sm leading-7 text-contact-muted">
-                        {link.caption}
-                      </p>
-                    </Link>
-                  ))}
+                  {content.contact.links.map((link) => {
+                    const Icon = contactIcons[link.platform];
+
+                    return (
+                      <Link
+                        key={link.href}
+                        href={link.href}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="rounded-3xl border border-white/10 bg-white/5 p-5 transition hover:border-contact-accent/40 hover:bg-white/8 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-contact-accent"
+                      >
+                        <div className="flex items-center gap-3">
+                          <Icon className="h-6 w-6 text-contact-accent" />
+                          <p className="text-lg font-semibold">{link.label}</p>
+                        </div>
+                        <p className="mt-2 text-sm leading-7 text-contact-muted">
+                          {link.caption}
+                        </p>
+                      </Link>
+                    );
+                  })}
                 </div>
               </div>
             </div>

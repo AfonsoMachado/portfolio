@@ -1,4 +1,7 @@
-import type { PortfolioContent } from "@/core/domain/entities/portfolio";
+import {
+  ContactPlatform,
+  type PortfolioContent,
+} from "@/core/domain/entities/portfolio";
 import { githubProfileUrl } from "@/shared/config/github";
 import {
   instagramProfileUrl,
@@ -155,16 +158,19 @@ export const portfolioContent: PortfolioDictionary = {
         {
           label: "GitHub",
           href: githubProfileUrl,
+          platform: ContactPlatform.GitHub,
           caption: "Repositórios, histórico e projetos públicos",
         },
         {
           label: "LinkedIn",
           href: linkedInProfileUrl,
+          platform: ContactPlatform.LinkedIn,
           caption: "Experiência, networking e contato profissional",
         },
         {
           label: "Instagram",
           href: instagramProfileUrl,
+          platform: ContactPlatform.Instagram,
           caption: "Presença pessoal e bastidores",
         },
       ],
@@ -316,16 +322,19 @@ export const portfolioContent: PortfolioDictionary = {
         {
           label: "GitHub",
           href: githubProfileUrl,
+          platform: ContactPlatform.GitHub,
           caption: "Repositories, history, and public projects",
         },
         {
           label: "LinkedIn",
           href: linkedInProfileUrl,
+          platform: ContactPlatform.LinkedIn,
           caption: "Experience, networking, and professional contact",
         },
         {
           label: "Instagram",
           href: instagramProfileUrl,
+          platform: ContactPlatform.Instagram,
           caption: "Personal presence and behind the scenes",
         },
       ],
@@ -478,16 +487,19 @@ export const portfolioContent: PortfolioDictionary = {
         {
           label: "GitHub",
           href: githubProfileUrl,
+          platform: ContactPlatform.GitHub,
           caption: "Repositorios, historial y proyectos públicos",
         },
         {
           label: "LinkedIn",
           href: linkedInProfileUrl,
+          platform: ContactPlatform.LinkedIn,
           caption: "Experiencia, networking y contacto profesional",
         },
         {
           label: "Instagram",
           href: instagramProfileUrl,
+          platform: ContactPlatform.Instagram,
           caption: "Presencia personal y detrás de escena",
         },
       ],

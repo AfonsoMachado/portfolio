@@ -20,10 +20,17 @@ export type Project = {
   description: string;
 };
 
+export enum ContactPlatform {
+  GitHub = "github",
+  Instagram = "instagram",
+  LinkedIn = "linkedin",
+}
+
 export type ContactLink = {
-  label: string;
-  href: string;
   caption: string;
+  href: string;
+  label: string;
+  platform: ContactPlatform;
 };
 
 export type PortfolioContent = {
