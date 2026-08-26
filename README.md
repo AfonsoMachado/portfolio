@@ -59,6 +59,8 @@ No extra environment variables are required for the current version.
 
 Vercel Web Analytics is integrated through `@vercel/analytics`. Enable it in the project's **Analytics** section in the Vercel dashboard, then deploy to begin collecting production page views.
 
+The contact section records `linkedin_contact_click` with the selected locale. In **Analytics**, open the event and filter by **Country** to see the aggregated location of these clicks. Vercel custom events require a Pro or Enterprise plan.
+
 Vercel Speed Insights is integrated through `@vercel/speed-insights`. Enable it in the project's **Speed Insights** section to collect Core Web Vitals from visitors.
 
 ### Continuous deployment
