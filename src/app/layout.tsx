@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
+import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
 import { siteUrl } from "@/shared/config/site";
+import { themeInitializationScript } from "@/shared/config/theme";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -44,6 +46,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       suppressHydrationWarning
     >
       <body className="min-h-full">
+        <Script id="theme-initialization" strategy="beforeInteractive">
+          {themeInitializationScript}
+        </Script>
         {children}
         <Analytics />
         <SpeedInsights />

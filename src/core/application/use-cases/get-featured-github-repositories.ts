@@ -1,10 +1,8 @@
 import type { GitHubRepository } from "@/core/domain/entities/github-repository";
-import { GitHubApiRepositoryRepository } from "@/core/infrastructure/repositories/github-api-repository.repository";
+import type { GitHubRepositoryRepository } from "@/core/domain/repositories/github-repository.repository";
 
-const repository = new GitHubApiRepositoryRepository();
-
-export async function getFeaturedGitHubRepositories(): Promise<
-  GitHubRepository[]
-> {
+export async function getFeaturedGitHubRepositories(
+  repository: GitHubRepositoryRepository,
+): Promise<GitHubRepository[]> {
   return repository.getFeatured();
 }

@@ -33,7 +33,7 @@ export function ProjectCard({ labels, project, repository }: ProjectCardProps) {
         </span>
       </div>
       <h3 className="mt-5 text-2xl font-semibold text-foreground">
-        {project.title}
+        {project.id}
       </h3>
       <p className="mt-4 flex-1 text-sm leading-7 text-muted">
         {project.description}
@@ -56,7 +56,7 @@ export function ProjectCard({ labels, project, repository }: ProjectCardProps) {
             href={repository.profileUrl}
             target="_blank"
             rel="noreferrer"
-            aria-label={`${labels.openRepositoryAriaLabel} ${project.title}`}
+            aria-label={`${labels.openRepositoryAriaLabel} ${project.id}`}
             className="inline-flex w-fit rounded-full border border-line px-4 py-2 text-sm font-medium transition hover:bg-accent-soft focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
           >
             {labels.openLabel}
@@ -66,7 +66,7 @@ export function ProjectCard({ labels, project, repository }: ProjectCardProps) {
               href={repository.demoUrl}
               target="_blank"
               rel="noreferrer"
-              aria-label={`${labels.openDemoAriaLabel} ${project.title}`}
+              aria-label={`${labels.openDemoAriaLabel} ${project.id}`}
               className="inline-flex w-fit rounded-full bg-action px-4 py-2 text-sm font-medium text-on-action transition hover:bg-action-hover focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
             >
               {labels.openDemoLabel}

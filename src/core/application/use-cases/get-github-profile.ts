@@ -1,8 +1,8 @@
 import type { GitHubProfile } from "@/core/domain/entities/github-profile";
-import { GitHubApiProfileRepository } from "@/core/infrastructure/repositories/github-api-profile.repository";
+import type { GitHubProfileRepository } from "@/core/domain/repositories/github-profile.repository";
 
-const repository = new GitHubApiProfileRepository();
-
-export async function getGitHubProfile(): Promise<GitHubProfile | null> {
+export async function getGitHubProfile(
+  repository: GitHubProfileRepository,
+): Promise<GitHubProfile | null> {
   return repository.get();
 }

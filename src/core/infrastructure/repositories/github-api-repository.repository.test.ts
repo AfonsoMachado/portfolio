@@ -30,6 +30,12 @@ describe("GitHubApiRepositoryRepository", () => {
           html_url: "https://github.com/AfonsoMachado/another-repository",
           name: "another-repository",
         },
+        {
+          fork: false,
+          html_url: "https://github.com/AfonsoMachado/flappy-bird",
+          name: "flappy-bird",
+          topics: [1],
+        },
       ]),
     });
     vi.stubGlobal("fetch", fetchMock);

@@ -34,6 +34,10 @@ describe("ThemeSwitcher", () => {
     window.localStorage.setItem("afonso-portfolio-theme", "dark");
     render(<ThemeSwitcher labels={labels} />);
 
+    expect(
+      screen.getByRole("button", { name: "Dark" }).getAttribute("aria-pressed"),
+    ).toBe("true");
+
     fireEvent.click(screen.getByRole("button", { name: "System" }));
 
     expect(window.localStorage.getItem("afonso-portfolio-theme")).toBe(

@@ -1,5 +1,6 @@
 import {
   ContactPlatform,
+  ProjectId,
   type PortfolioContent,
 } from "@/core/domain/entities/portfolio";
 import { githubProfileUrl } from "@/shared/config/github";
@@ -7,7 +8,7 @@ import {
   instagramProfileUrl,
   linkedInProfileUrl,
 } from "@/shared/config/profile-links";
-import type { Locale } from "@/shared/i18n/config";
+import type { Locale } from "@/core/domain/entities/locale";
 
 type PortfolioDictionary = Record<Locale, PortfolioContent>;
 
@@ -116,32 +117,32 @@ export const portfolioContent: PortfolioDictionary = {
       moreLabel: "Ver perfil completo no GitHub",
       items: [
         {
-          title: "calculator-react",
+          id: ProjectId.CalculatorReact,
           description:
             "Calculadora inspirada na interface do macOS, construída em React com foco em composição de interface e comportamento previsível.",
         },
         {
-          title: "nubank-clone",
+          id: ProjectId.NubankClone,
           description:
             "Clone da interface mobile do Nubank em React Native, exercitando fidelidade visual e organização de componentes.",
         },
         {
-          title: "flappy-bird",
+          id: ProjectId.FlappyBird,
           description:
             "Releitura do jogo Flappy Bird com HTML, CSS e JavaScript, demonstrando lógica de jogo e manipulação do DOM.",
         },
         {
-          title: "crud-angular",
+          id: ProjectId.CrudAngular,
           description:
             "CRUD em Angular com persistência em JSON Server, explorando fluxo de dados e estrutura de aplicação front-end.",
         },
         {
-          title: "metalflix",
+          id: ProjectId.Metalflix,
           description:
             "Catálogo de vídeos com temática metal criado durante a Imersão React, combinando conteúdo, navegação e personalidade visual.",
         },
         {
-          title: "proffy-nlw",
+          id: ProjectId.ProffyNlw,
           description:
             "Projeto realizado durante a Next Level Week com foco em experiência educacional, formulários e organização de fluxo entre telas.",
         },
@@ -280,32 +281,32 @@ export const portfolioContent: PortfolioDictionary = {
       moreLabel: "View full GitHub profile",
       items: [
         {
-          title: "calculator-react",
+          id: ProjectId.CalculatorReact,
           description:
             "A macOS-inspired calculator in React, focused on interface composition and predictable behavior.",
         },
         {
-          title: "nubank-clone",
+          id: ProjectId.NubankClone,
           description:
             "A Nubank mobile interface clone built with React Native, exercising visual fidelity and component organization.",
         },
         {
-          title: "flappy-bird",
+          id: ProjectId.FlappyBird,
           description:
             "A Flappy Bird recreation with HTML, CSS, and JavaScript, showing game logic and DOM manipulation.",
         },
         {
-          title: "crud-angular",
+          id: ProjectId.CrudAngular,
           description:
             "An Angular CRUD backed by JSON Server, exploring data flow and front-end application structure.",
         },
         {
-          title: "metalflix",
+          id: ProjectId.Metalflix,
           description:
             "A metal-themed video catalog created during React immersion training, mixing content structure and visual personality.",
         },
         {
-          title: "proffy-nlw",
+          id: ProjectId.ProffyNlw,
           description:
             "An educational project from Next Level Week centered on forms, screen flows, and user experience.",
         },
@@ -445,32 +446,32 @@ export const portfolioContent: PortfolioDictionary = {
       moreLabel: "Ver perfil completo en GitHub",
       items: [
         {
-          title: "calculator-react",
+          id: ProjectId.CalculatorReact,
           description:
             "Calculadora inspirada en macOS hecha con React, enfocada en composición de interfaz y comportamiento predecible.",
         },
         {
-          title: "nubank-clone",
+          id: ProjectId.NubankClone,
           description:
             "Clon de la interfaz móvil de Nubank con React Native, ejercitando fidelidad visual y organización de componentes.",
         },
         {
-          title: "flappy-bird",
+          id: ProjectId.FlappyBird,
           description:
             "Recreación de Flappy Bird con HTML, CSS y JavaScript, mostrando lógica de juego y manipulación del DOM.",
         },
         {
-          title: "crud-angular",
+          id: ProjectId.CrudAngular,
           description:
             "CRUD en Angular con JSON Server, explorando flujo de datos y estructura de aplicación front-end.",
         },
         {
-          title: "metalflix",
+          id: ProjectId.Metalflix,
           description:
             "Catálogo de videos con temática metal creado durante una inmersión en React, combinando contenido e identidad visual.",
         },
         {
-          title: "proffy-nlw",
+          id: ProjectId.ProffyNlw,
           description:
             "Proyecto educativo de Next Level Week centrado en formularios, flujos entre pantallas y experiencia de usuario.",
         },

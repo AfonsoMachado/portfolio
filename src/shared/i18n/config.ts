@@ -1,6 +1,12 @@
-export const locales = ["pt-br", "en", "es"] as const;
+import type { Locale } from "@/core/domain/entities/locale";
 
-export type Locale = (typeof locales)[number];
+export type { Locale } from "@/core/domain/entities/locale";
+
+export const locales = [
+  "pt-br",
+  "en",
+  "es",
+] as const satisfies readonly Locale[];
 
 export const defaultLocale: Locale = "pt-br";
 

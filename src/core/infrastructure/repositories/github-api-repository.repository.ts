@@ -1,4 +1,5 @@
 import type { GitHubRepository } from "@/core/domain/entities/github-repository";
+import { ProjectId } from "@/core/domain/entities/portfolio";
 import type { GitHubRepositoryRepository } from "@/core/domain/repositories/github-repository.repository";
 import {
   featuredGitHubRepositoryNames,
@@ -29,6 +30,40 @@ repositoriesUrl.search = new URLSearchParams({
 const repositoriesApiUrl = repositoriesUrl.toString();
 const requestTimeoutInMilliseconds = 5_000;
 
+function isOptionalString(value: unknown): value is string | undefined {
+  return value === undefined || typeof value === "string";
+}
+
+function isOptionalStringOrNull(
+  value: unknown,
+): value is string | null | undefined {
+  return value === undefined || value === null || typeof value === "string";
+}
+
+function isGitHubApiRepository(value: unknown): value is GitHubApiRepository {
+  if (typeof value !== "object" || value === null) {
+    return false;
+  }
+
+  const repository = value as Record<string, unknown>;
+
+  return (
+    isOptionalStringOrNull(repository.description) &&
+    (repository.fork === undefined || typeof repository.fork === "boolean") &&
+    isOptionalStringOrNull(repository.homepage) &&
+    isOptionalString(repository.html_url) &&
+    isOptionalStringOrNull(repository.language) &&
+    isOptionalString(repository.name) &&
+    (repository.topics === undefined ||
+      (Array.isArray(repository.topics) &&
+        repository.topics.every((topic) => typeof topic === "string")))
+  );
+}
+
+function isProjectId(value: string): value is ProjectId {
+  return Object.values(ProjectId).includes(value as ProjectId);
+}
+
 function toDemoUrl(homepage: string | null | undefined): string | null {
   if (!homepage) {
     return null;
@@ -48,7 +83,12 @@ function toDemoUrl(homepage: string | null | undefined): string | null {
 function toGitHubRepository(
   repository: GitHubApiRepository,
 ): GitHubRepository | null {
-  if (!repository.name || !repository.html_url || repository.fork) {
+  if (
+    !repository.name ||
+    !repository.html_url ||
+    repository.fork ||
+    !isProjectId(repository.name)
+  ) {
     return null;
   }
 
@@ -87,9 +127,8 @@ export class GitHubApiRepositoryRepository implements GitHubRepositoryRepository
 
       const featuredRepositories = new Map(
         repositories
-          .map((repository) =>
-            toGitHubRepository(repository as GitHubApiRepository),
-          )
+          .filter(isGitHubApiRepository)
+          .map(toGitHubRepository)
           .filter(
             (repository): repository is GitHubRepository => repository !== null,
           )
