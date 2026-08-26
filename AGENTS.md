@@ -16,5 +16,5 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 - Add or update colocated Vitest tests for changes to domain logic, use cases, and interactive UI behavior.
 - Before committing, run `npm run format:check`, `npm run lint`, and `npm run test:run`. Run `npm run build` when changing Next.js configuration, routes, or production behavior.
 - Work from `development` and merge changes into `master` through a pull request. Do not push directly to `master`.
-- The `Pull request validation / Validate` check must pass before merging. Pushes to `master` trigger the Vercel production deployment workflow.
+- The `Validate` check must pass before merging. Pushes to `master` trigger the Vercel production deployment workflow.
 - Never commit `.vercel`, `.env*`, Vercel tokens, or GitHub Actions secrets. The deployment workflow uses `VERCEL_TOKEN`, `VERCEL_ORG_ID`, and `VERCEL_PROJECT_ID` repository secrets.

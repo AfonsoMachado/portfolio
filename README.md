@@ -55,6 +55,12 @@ This project is ready for Vercel:
 
 No extra environment variables are required for the current version.
 
+### Web Analytics
+
+Vercel Web Analytics is integrated through `@vercel/analytics`. Enable it in the project's **Analytics** section in the Vercel dashboard, then deploy to begin collecting production page views.
+
+Vercel Speed Insights is integrated through `@vercel/speed-insights`. Enable it in the project's **Speed Insights** section to collect Core Web Vitals from visitors.
+
 ### Continuous deployment
 
 Pushes to `master` run lint and unit tests in GitHub Actions before creating a Vercel production deployment.
