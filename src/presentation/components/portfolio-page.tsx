@@ -5,7 +5,6 @@ import { LanguageSwitcher } from "@/presentation/components/language-switcher";
 import { MobileNavigation } from "@/presentation/components/mobile-navigation";
 import { Reveal } from "@/presentation/components/reveal";
 import { ThemeSwitcher } from "@/presentation/components/theme-switcher";
-import { TrackedContactLink } from "@/presentation/components/tracked-contact-link";
 import type { Locale } from "@/shared/i18n/config";
 
 type PortfolioPageProps = {
@@ -305,11 +304,18 @@ export function PortfolioPage({ content, locale }: PortfolioPageProps) {
 
                 <div className="grid gap-4">
                   {content.contact.links.map((link) => (
-                    <TrackedContactLink
+                    <Link
                       key={link.href}
-                      link={link}
-                      locale={locale}
-                    />
+                      href={link.href}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="rounded-3xl border border-white/10 bg-white/5 p-5 transition hover:border-contact-accent/40 hover:bg-white/8"
+                    >
+                      <p className="text-lg font-semibold">{link.label}</p>
+                      <p className="mt-2 text-sm leading-7 text-contact-muted">
+                        {link.caption}
+                      </p>
+                    </Link>
                   ))}
                 </div>
               </div>
