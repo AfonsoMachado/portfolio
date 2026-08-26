@@ -55,6 +55,12 @@ This project is ready for Vercel:
 
 No extra environment variables are required for the current version.
 
+### SEO and sharing
+
+The App Router generates localized canonical URLs, `hreflang` alternates, `sitemap.xml`, `robots.txt`, a web manifest, favicon, and an Open Graph image.
+
+The production alias is the default URL. When configuring a custom domain, add `NEXT_PUBLIC_SITE_URL` in Vercel with its full HTTPS URL so canonical URLs and the sitemap use the domain.
+
 ### Web Analytics
 
 Vercel Web Analytics is integrated through `@vercel/analytics`. Enable it in the project's **Analytics** section in the Vercel dashboard, then deploy to begin collecting production page views.
