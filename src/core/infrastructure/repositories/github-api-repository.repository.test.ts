@@ -14,6 +14,7 @@ describe("GitHubApiRepositoryRepository", () => {
         {
           description: "A calculator",
           fork: false,
+          homepage: "https://calculator-afonso.vercel.app",
           html_url: "https://github.com/AfonsoMachado/calculator-react",
           language: "JavaScript",
           name: "calculator-react",
@@ -38,6 +39,7 @@ describe("GitHubApiRepositoryRepository", () => {
 
     expect(repositories).toEqual([
       {
+        demoUrl: "https://calculator-afonso.vercel.app/",
         description: "A calculator",
         name: "calculator-react",
         primaryLanguage: "JavaScript",
@@ -49,6 +51,7 @@ describe("GitHubApiRepositoryRepository", () => {
       "https://api.github.com/users/AfonsoMachado/repos?direction=desc&per_page=100&sort=pushed&type=owner",
       expect.objectContaining({
         next: { revalidate: 86_400 },
+        signal: expect.any(AbortSignal),
       }),
     );
   });

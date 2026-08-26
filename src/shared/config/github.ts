@@ -1,4 +1,5 @@
 export const githubUsername = "AfonsoMachado";
+export const githubProfileUrl = `https://github.com/${githubUsername}`;
 
 export const featuredGitHubRepositoryNames = [
   "calculator-react",

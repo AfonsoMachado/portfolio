@@ -57,7 +57,7 @@ No extra environment variables are required for the current version.
 
 ### SEO and sharing
 
-The App Router generates localized canonical URLs, `hreflang` alternates, `sitemap.xml`, `robots.txt`, a web manifest, favicon, and an Open Graph image.
+The App Router generates localized canonical URLs, `hreflang` alternates, `sitemap.xml`, `robots.txt`, a web manifest, favicon, a localized 404 page, and Open Graph images per locale.
 
 The production alias is the default URL. When configuring a custom domain, add `NEXT_PUBLIC_SITE_URL` in Vercel with its full HTTPS URL so canonical URLs and the sitemap use the domain.
 
@@ -73,7 +73,7 @@ Vercel Speed Insights is integrated through `@vercel/speed-insights`. Enable it 
 
 The identity card retrieves the public profile of `AfonsoMachado` from the GitHub REST API and displays the current avatar. The response is cached for 24 hours and the initials are shown if the API is unavailable.
 
-The featured projects section also enriches the curated repositories with their primary language and topics. This request is cached for 24 hours and preserves localized project copy if the API is unavailable.
+The featured projects section also enriches the curated repositories with their primary language, topics, and an optional live demo URL from the repository `homepage` field. The API request times out after five seconds, is cached for 24 hours, and preserves localized project copy if the API is unavailable.
 
 ### Continuous deployment
 

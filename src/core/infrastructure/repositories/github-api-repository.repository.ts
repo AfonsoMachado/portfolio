@@ -8,6 +8,7 @@ import {
 type GitHubApiRepository = {
   description?: string | null;
   fork?: boolean;
+  homepage?: string | null;
   html_url?: string;
   language?: string | null;
   name?: string;
@@ -26,6 +27,23 @@ repositoriesUrl.search = new URLSearchParams({
 }).toString();
 
 const repositoriesApiUrl = repositoriesUrl.toString();
+const requestTimeoutInMilliseconds = 5_000;
+
+function toDemoUrl(homepage: string | null | undefined): string | null {
+  if (!homepage) {
+    return null;
+  }
+
+  try {
+    const url = new URL(homepage);
+
+    return url.protocol === "https:" || url.protocol === "http:"
+      ? url.toString()
+      : null;
+  } catch {
+    return null;
+  }
+}
 
 function toGitHubRepository(
   repository: GitHubApiRepository,
@@ -35,6 +53,7 @@ function toGitHubRepository(
   }
 
   return {
+    demoUrl: toDemoUrl(repository.homepage),
     description: repository.description ?? null,
     name: repository.name,
     primaryLanguage: repository.language ?? null,
@@ -47,6 +66,7 @@ export class GitHubApiRepositoryRepository implements GitHubRepositoryRepository
   async getFeatured(): Promise<GitHubRepository[]> {
     try {
       const response = await fetch(repositoriesApiUrl, {
+        signal: AbortSignal.timeout(requestTimeoutInMilliseconds),
         headers: {
           Accept: "application/vnd.github+json",
           "User-Agent": "afonso-machado-portfolio",

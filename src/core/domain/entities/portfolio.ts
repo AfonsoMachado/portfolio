@@ -73,6 +73,9 @@ export type PortfolioContent = {
     description: string;
     repositoryLabel: string;
     openLabel: string;
+    openDemoLabel: string;
+    openDemoAriaLabel: string;
+    openRepositoryAriaLabel: string;
     items: Project[];
     moreLabel: string;
   };

@@ -31,4 +31,15 @@ describe("MobileNavigation", () => {
     expect(button.getAttribute("aria-expanded")).toBe("false");
     expect(navigation.className).toContain("invisible");
   });
+
+  it("closes the menu and restores button focus when Escape is pressed", () => {
+    render(<MobileNavigation items={[...items]} label="Menu" />);
+
+    const button = screen.getByRole("button", { name: "Menu" });
+    fireEvent.click(button);
+    fireEvent.keyDown(document, { key: "Escape" });
+
+    expect(button.getAttribute("aria-expanded")).toBe("false");
+    expect(document.activeElement).toBe(button);
+  });
 });

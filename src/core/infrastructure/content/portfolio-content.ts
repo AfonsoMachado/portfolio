@@ -1,4 +1,9 @@
 import type { PortfolioContent } from "@/core/domain/entities/portfolio";
+import { githubProfileUrl } from "@/shared/config/github";
+import {
+  instagramProfileUrl,
+  linkedInProfileUrl,
+} from "@/shared/config/profile-links";
 import type { Locale } from "@/shared/i18n/config";
 
 type PortfolioDictionary = Record<Locale, PortfolioContent>;
@@ -102,6 +107,9 @@ export const portfolioContent: PortfolioDictionary = {
       description: "Uma seleção dos meus repositórios públicos no GitHub.",
       repositoryLabel: "Repositório",
       openLabel: "Abrir repositório",
+      openDemoLabel: "Ver demonstração",
+      openDemoAriaLabel: "Abrir demonstração de",
+      openRepositoryAriaLabel: "Abrir repositório de",
       moreLabel: "Ver perfil completo no GitHub",
       items: [
         {
@@ -146,23 +154,22 @@ export const portfolioContent: PortfolioDictionary = {
       links: [
         {
           label: "GitHub",
-          href: "https://github.com/AfonsoMachado",
+          href: githubProfileUrl,
           caption: "Repositórios, histórico e projetos públicos",
         },
         {
           label: "LinkedIn",
-          href: "https://www.linkedin.com/in/afonsomachado/",
+          href: linkedInProfileUrl,
           caption: "Experiência, networking e contato profissional",
         },
         {
           label: "Instagram",
-          href: "https://www.instagram.com/afonsomachado",
+          href: instagramProfileUrl,
           caption: "Presença pessoal e bastidores",
         },
       ],
     },
-    footer:
-      "Desenvolvedor full-stack formado em Engenharia de Computação.",
+    footer: "Desenvolvedor full-stack formado em Engenharia de Computação.",
   },
   en: {
     locale: "en",
@@ -261,6 +268,9 @@ export const portfolioContent: PortfolioDictionary = {
       description: "A selection of my public GitHub repositories.",
       repositoryLabel: "Repository",
       openLabel: "Open repository",
+      openDemoLabel: "View live demo",
+      openDemoAriaLabel: "Open live demo for",
+      openRepositoryAriaLabel: "Open repository for",
       moreLabel: "View full GitHub profile",
       items: [
         {
@@ -305,17 +315,17 @@ export const portfolioContent: PortfolioDictionary = {
       links: [
         {
           label: "GitHub",
-          href: "https://github.com/AfonsoMachado",
+          href: githubProfileUrl,
           caption: "Repositories, history, and public projects",
         },
         {
           label: "LinkedIn",
-          href: "https://www.linkedin.com/in/afonsomachado/",
+          href: linkedInProfileUrl,
           caption: "Experience, networking, and professional contact",
         },
         {
           label: "Instagram",
-          href: "https://www.instagram.com/afonsomachado",
+          href: instagramProfileUrl,
           caption: "Personal presence and behind the scenes",
         },
       ],
@@ -420,6 +430,9 @@ export const portfolioContent: PortfolioDictionary = {
       description: "Una selección de mis repositorios públicos en GitHub.",
       repositoryLabel: "Repositorio",
       openLabel: "Abrir repositorio",
+      openDemoLabel: "Ver demostración",
+      openDemoAriaLabel: "Abrir demostración de",
+      openRepositoryAriaLabel: "Abrir repositorio de",
       moreLabel: "Ver perfil completo en GitHub",
       items: [
         {
@@ -464,22 +477,21 @@ export const portfolioContent: PortfolioDictionary = {
       links: [
         {
           label: "GitHub",
-          href: "https://github.com/AfonsoMachado",
+          href: githubProfileUrl,
           caption: "Repositorios, historial y proyectos públicos",
         },
         {
           label: "LinkedIn",
-          href: "https://www.linkedin.com/in/afonsomachado/",
+          href: linkedInProfileUrl,
           caption: "Experiencia, networking y contacto profesional",
         },
         {
           label: "Instagram",
-          href: "https://www.instagram.com/afonsomachado",
+          href: instagramProfileUrl,
           caption: "Presencia personal y detrás de escena",
         },
       ],
     },
-    footer:
-      "Desarrollador full-stack graduado en Ingeniería de Computación.",
+    footer: "Desarrollador full-stack graduado en Ingeniería de Computación.",
   },
 };
