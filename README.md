@@ -69,6 +69,10 @@ On the Hobby plan, use the built-in route, country, referrer, device, and browse
 
 Vercel Speed Insights is integrated through `@vercel/speed-insights`. Enable it in the project's **Speed Insights** section to collect Core Web Vitals from visitors.
 
+### GitHub profile
+
+The identity card retrieves the public profile of `AfonsoMachado` from the GitHub REST API and displays the current avatar. The response is cached for 24 hours and the initials are shown if the API is unavailable.
+
 ### Continuous deployment
 
 Pushes to `master` run lint and unit tests in GitHub Actions before creating a Vercel production deployment.

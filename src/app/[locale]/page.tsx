@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
+import { getGitHubProfile } from "@/core/application/use-cases/get-github-profile";
 import { getPortfolioContent } from "@/core/application/use-cases/get-portfolio-content";
 import { PortfolioPage } from "@/presentation/components/portfolio-page";
 import { getLocalizedUrl } from "@/shared/config/site";
@@ -62,7 +63,16 @@ export default async function LocalizedHomePage({ params }: LocalePageProps) {
     notFound();
   }
 
-  const content = await getPortfolioContent(locale as Locale);
+  const [content, githubProfile] = await Promise.all([
+    getPortfolioContent(locale as Locale),
+    getGitHubProfile(),
+  ]);
 
-  return <PortfolioPage content={content} locale={locale as Locale} />;
+  return (
+    <PortfolioPage
+      content={content}
+      githubProfile={githubProfile}
+      locale={locale as Locale}
+    />
+  );
 }

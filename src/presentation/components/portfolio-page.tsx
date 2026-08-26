@@ -1,5 +1,7 @@
+import Image from "next/image";
 import Link from "next/link";
 
+import type { GitHubProfile } from "@/core/domain/entities/github-profile";
 import type { PortfolioContent } from "@/core/domain/entities/portfolio";
 import { LanguageSwitcher } from "@/presentation/components/language-switcher";
 import { MobileNavigation } from "@/presentation/components/mobile-navigation";
@@ -9,10 +11,15 @@ import type { Locale } from "@/shared/i18n/config";
 
 type PortfolioPageProps = {
   content: PortfolioContent;
+  githubProfile: GitHubProfile | null;
   locale: Locale;
 };
 
-export function PortfolioPage({ content, locale }: PortfolioPageProps) {
+export function PortfolioPage({
+  content,
+  githubProfile,
+  locale,
+}: PortfolioPageProps) {
   return (
     <main id="home" className="relative overflow-hidden">
       <div className="mx-auto flex min-h-screen w-full max-w-7xl flex-col px-5 pb-10 pt-5 sm:px-8 lg:px-10">
@@ -99,9 +106,29 @@ export function PortfolioPage({ content, locale }: PortfolioPageProps) {
                 <div className="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-identity-glow-warm/30 blur-2xl" />
                 <div className="absolute -bottom-12 left-12 h-40 w-40 rounded-full bg-identity-glow-cool/40 blur-3xl" />
                 <div className="relative">
-                  <div className="inline-flex rounded-full border border-white/15 px-4 py-2 font-mono text-xs uppercase tracking-[0.3em] text-identity-accent">
-                    AM
-                  </div>
+                  {githubProfile ? (
+                    <Link
+                      href={githubProfile.profileUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label={`GitHub de ${githubProfile.login}`}
+                      className="inline-flex rounded-full transition focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-identity-accent"
+                    >
+                      <Image
+                        src={githubProfile.avatarUrl}
+                        alt={`Foto de perfil de ${githubProfile.login} no GitHub`}
+                        width={96}
+                        height={96}
+                        priority
+                        sizes="96px"
+                        className="h-24 w-24 rounded-full border-2 border-identity-accent object-cover"
+                      />
+                    </Link>
+                  ) : (
+                    <div className="inline-flex rounded-full border border-white/15 px-4 py-2 font-mono text-xs uppercase tracking-[0.3em] text-identity-accent">
+                      AM
+                    </div>
+                  )}
                   <p className="mt-8 text-sm uppercase tracking-[0.28em] text-identity-accent">
                     {content.brand.location}
                   </p>
