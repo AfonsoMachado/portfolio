@@ -1,12 +1,13 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useSyncExternalStore } from "react";
 
 import {
   MoonIcon,
   SunIcon,
   SystemIcon,
 } from "@/presentation/components/icons/interface-icons";
+import { themeStorageKey } from "@/shared/config/theme";
 
 type Theme = "system" | "light" | "dark";
 
@@ -19,20 +20,31 @@ type ThemeSwitcherProps = {
   };
 };
 
-const storageKey = "afonso-portfolio-theme";
-
 function getStoredTheme(): Theme {
   if (typeof window === "undefined") {
     return "system";
   }
 
-  const savedTheme = window.localStorage.getItem(storageKey);
+  const savedTheme = window.localStorage.getItem(themeStorageKey);
 
   return savedTheme === "light" ||
     savedTheme === "dark" ||
     savedTheme === "system"
     ? savedTheme
     : "system";
+}
+
+const listeners = new Set<() => void>();
+
+function subscribeToTheme(listener: () => void) {
+  listeners.add(listener);
+
+  return () => listeners.delete(listener);
+}
+
+function storeTheme(theme: Theme) {
+  window.localStorage.setItem(themeStorageKey, theme);
+  listeners.forEach((listener) => listener());
 }
 
 function applyTheme(theme: Theme) {
@@ -58,15 +70,14 @@ function ThemeIcon({ theme }: { theme: Theme }) {
 }
 
 export function ThemeSwitcher({ labels }: ThemeSwitcherProps) {
-  const [theme, setTheme] = useState<Theme>(getStoredTheme);
-
-  useEffect(() => {
-    applyTheme(theme);
-  }, [theme]);
+  const theme = useSyncExternalStore(
+    subscribeToTheme,
+    getStoredTheme,
+    () => "system",
+  );
 
   function selectTheme(nextTheme: Theme) {
-    setTheme(nextTheme);
-    window.localStorage.setItem(storageKey, nextTheme);
+    storeTheme(nextTheme);
     applyTheme(nextTheme);
   }
 

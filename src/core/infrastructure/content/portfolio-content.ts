@@ -1,5 +1,14 @@
-import type { PortfolioContent } from "@/core/domain/entities/portfolio";
-import type { Locale } from "@/shared/i18n/config";
+import {
+  ContactPlatform,
+  ProjectId,
+  type PortfolioContent,
+} from "@/core/domain/entities/portfolio";
+import { githubProfileUrl } from "@/shared/config/github";
+import {
+  instagramProfileUrl,
+  linkedInProfileUrl,
+} from "@/shared/config/profile-links";
+import type { Locale } from "@/core/domain/entities/locale";
 
 type PortfolioDictionary = Record<Locale, PortfolioContent>;
 
@@ -13,7 +22,7 @@ export const portfolioContent: PortfolioDictionary = {
     },
     brand: {
       name: "Afonso Machado",
-      role: "Desenvolvedor web full-stack",
+      role: "Desenvolvedor full-stack",
       location: "Feira de Santana, Bahia, Brasil",
     },
     navigation: [
@@ -34,7 +43,7 @@ export const portfolioContent: PortfolioDictionary = {
     hero: {
       title: "Olá, eu sou Afonso Machado.",
       description:
-        "Estudante de Engenharia de Computação e desenvolvedor full-stack. Aqui estão alguns dos projetos e tecnologias que fazem parte da minha trajetória.",
+        "Formado em Engenharia de Computação e desenvolvedor full-stack. Aqui estão alguns dos projetos e tecnologias que fazem parte da minha trajetória.",
       primaryCta: "Ver projetos",
       secondaryCta: "Entrar em contato",
     },
@@ -44,7 +53,7 @@ export const portfolioContent: PortfolioDictionary = {
       title:
         "Em constante aprendizado, transformando ideias em aplicações web.",
       paragraphs: [
-        "Sou desenvolvedor web full-stack e estudante de Engenharia de Computação. Gosto de entender como as coisas funcionam, escrever código claro e entregar experiências úteis para quem usa o produto.",
+        "Sou desenvolvedor full-stack formado em Engenharia de Computação. Gosto de entender como as coisas funcionam, escrever código claro e entregar experiências úteis para quem usa o produto.",
         "Tenho interesse em desenvolvimento front-end, back-end e mobile. Este espaço reúne trabalhos que representam o que venho aprendendo e construindo.",
       ],
       highlights: [
@@ -102,49 +111,40 @@ export const portfolioContent: PortfolioDictionary = {
       description: "Uma seleção dos meus repositórios públicos no GitHub.",
       repositoryLabel: "Repositório",
       openLabel: "Abrir repositório",
+      openDemoLabel: "Ver demonstração",
+      openDemoAriaLabel: "Abrir demonstração de",
+      openRepositoryAriaLabel: "Abrir repositório de",
       moreLabel: "Ver perfil completo no GitHub",
       items: [
         {
-          title: "calculator-react",
+          id: ProjectId.CalculatorReact,
           description:
             "Calculadora inspirada na interface do macOS, construída em React com foco em composição de interface e comportamento previsível.",
-          href: "https://github.com/AfonsoMachado/calculator-react",
-          stack: ["React", "JavaScript", "UI"],
         },
         {
-          title: "nubank-clone",
+          id: ProjectId.NubankClone,
           description:
             "Clone da interface mobile do Nubank em React Native, exercitando fidelidade visual e organização de componentes.",
-          href: "https://github.com/AfonsoMachado/nubank-clone",
-          stack: ["React Native", "JavaScript", "Mobile UI"],
         },
         {
-          title: "flappy-bird",
+          id: ProjectId.FlappyBird,
           description:
             "Releitura do jogo Flappy Bird com HTML, CSS e JavaScript, demonstrando lógica de jogo e manipulação do DOM.",
-          href: "https://github.com/AfonsoMachado/flappy-bird",
-          stack: ["HTML", "CSS", "JavaScript"],
         },
         {
-          title: "crud-angular",
+          id: ProjectId.CrudAngular,
           description:
             "CRUD em Angular com persistência em JSON Server, explorando fluxo de dados e estrutura de aplicação front-end.",
-          href: "https://github.com/AfonsoMachado/crud-angular",
-          stack: ["Angular", "TypeScript", "JSON Server"],
         },
         {
-          title: "metalflix",
+          id: ProjectId.Metalflix,
           description:
             "Catálogo de vídeos com temática metal criado durante a Imersão React, combinando conteúdo, navegação e personalidade visual.",
-          href: "https://github.com/AfonsoMachado/metalflix",
-          stack: ["React", "JavaScript", "Content UI"],
         },
         {
-          title: "proffy-nlw",
+          id: ProjectId.ProffyNlw,
           description:
             "Projeto realizado durante a Next Level Week com foco em experiência educacional, formulários e organização de fluxo entre telas.",
-          href: "https://github.com/AfonsoMachado/proffy-nlw",
-          stack: ["TypeScript", "Node.js", "Education"],
         },
       ],
     },
@@ -158,23 +158,25 @@ export const portfolioContent: PortfolioDictionary = {
       links: [
         {
           label: "GitHub",
-          href: "https://github.com/AfonsoMachado",
+          href: githubProfileUrl,
+          platform: ContactPlatform.GitHub,
           caption: "Repositórios, histórico e projetos públicos",
         },
         {
           label: "LinkedIn",
-          href: "https://www.linkedin.com/in/afonsomachado/",
+          href: linkedInProfileUrl,
+          platform: ContactPlatform.LinkedIn,
           caption: "Experiência, networking e contato profissional",
         },
         {
           label: "Instagram",
-          href: "https://www.instagram.com/afonsomachado",
+          href: instagramProfileUrl,
+          platform: ContactPlatform.Instagram,
           caption: "Presença pessoal e bastidores",
         },
       ],
     },
-    footer:
-      "Desenvolvedor web full-stack e estudante de Engenharia de Computação.",
+    footer: "Desenvolvedor full-stack formado em Engenharia de Computação.",
   },
   en: {
     locale: "en",
@@ -185,7 +187,7 @@ export const portfolioContent: PortfolioDictionary = {
     },
     brand: {
       name: "Afonso Machado",
-      role: "Full-stack web developer",
+      role: "Full-stack developer",
       location: "Feira de Santana, Bahia, Brazil",
     },
     navigation: [
@@ -206,7 +208,7 @@ export const portfolioContent: PortfolioDictionary = {
     hero: {
       title: "Hi, I am Afonso Machado.",
       description:
-        "Computer Engineering student and full-stack developer. Here are some of the projects and technologies that are part of my journey.",
+        "Computer Engineering graduate and full-stack developer. Here are some of the projects and technologies that are part of my journey.",
       primaryCta: "See projects",
       secondaryCta: "Get in touch",
     },
@@ -215,7 +217,7 @@ export const portfolioContent: PortfolioDictionary = {
       eyebrow: "About",
       title: "Always learning and turning ideas into web applications.",
       paragraphs: [
-        "I am a full-stack web developer and a Computer Engineering student. I enjoy understanding how things work, writing clear code, and delivering useful experiences for product users.",
+        "I am a full-stack developer with a degree in Computer Engineering. I enjoy understanding how things work, writing clear code, and delivering useful experiences for product users.",
         "I am interested in front-end, back-end, and mobile development. This space brings together work that represents what I have been learning and building.",
       ],
       highlights: [
@@ -273,49 +275,40 @@ export const portfolioContent: PortfolioDictionary = {
       description: "A selection of my public GitHub repositories.",
       repositoryLabel: "Repository",
       openLabel: "Open repository",
+      openDemoLabel: "View live demo",
+      openDemoAriaLabel: "Open live demo for",
+      openRepositoryAriaLabel: "Open repository for",
       moreLabel: "View full GitHub profile",
       items: [
         {
-          title: "calculator-react",
+          id: ProjectId.CalculatorReact,
           description:
             "A macOS-inspired calculator in React, focused on interface composition and predictable behavior.",
-          href: "https://github.com/AfonsoMachado/calculator-react",
-          stack: ["React", "JavaScript", "UI"],
         },
         {
-          title: "nubank-clone",
+          id: ProjectId.NubankClone,
           description:
             "A Nubank mobile interface clone built with React Native, exercising visual fidelity and component organization.",
-          href: "https://github.com/AfonsoMachado/nubank-clone",
-          stack: ["React Native", "JavaScript", "Mobile UI"],
         },
         {
-          title: "flappy-bird",
+          id: ProjectId.FlappyBird,
           description:
             "A Flappy Bird recreation with HTML, CSS, and JavaScript, showing game logic and DOM manipulation.",
-          href: "https://github.com/AfonsoMachado/flappy-bird",
-          stack: ["HTML", "CSS", "JavaScript"],
         },
         {
-          title: "crud-angular",
+          id: ProjectId.CrudAngular,
           description:
             "An Angular CRUD backed by JSON Server, exploring data flow and front-end application structure.",
-          href: "https://github.com/AfonsoMachado/crud-angular",
-          stack: ["Angular", "TypeScript", "JSON Server"],
         },
         {
-          title: "metalflix",
+          id: ProjectId.Metalflix,
           description:
             "A metal-themed video catalog created during React immersion training, mixing content structure and visual personality.",
-          href: "https://github.com/AfonsoMachado/metalflix",
-          stack: ["React", "JavaScript", "Content UI"],
         },
         {
-          title: "proffy-nlw",
+          id: ProjectId.ProffyNlw,
           description:
             "An educational project from Next Level Week centered on forms, screen flows, and user experience.",
-          href: "https://github.com/AfonsoMachado/proffy-nlw",
-          stack: ["TypeScript", "Node.js", "Education"],
         },
       ],
     },
@@ -329,22 +322,25 @@ export const portfolioContent: PortfolioDictionary = {
       links: [
         {
           label: "GitHub",
-          href: "https://github.com/AfonsoMachado",
+          href: githubProfileUrl,
+          platform: ContactPlatform.GitHub,
           caption: "Repositories, history, and public projects",
         },
         {
           label: "LinkedIn",
-          href: "https://www.linkedin.com/in/afonsomachado/",
+          href: linkedInProfileUrl,
+          platform: ContactPlatform.LinkedIn,
           caption: "Experience, networking, and professional contact",
         },
         {
           label: "Instagram",
-          href: "https://www.instagram.com/afonsomachado",
+          href: instagramProfileUrl,
+          platform: ContactPlatform.Instagram,
           caption: "Personal presence and behind the scenes",
         },
       ],
     },
-    footer: "Full-stack web developer and Computer Engineering student.",
+    footer: "Full-stack developer with a degree in Computer Engineering.",
   },
   es: {
     locale: "es",
@@ -355,7 +351,7 @@ export const portfolioContent: PortfolioDictionary = {
     },
     brand: {
       name: "Afonso Machado",
-      role: "Desarrollador web full-stack",
+      role: "Desarrollador full-stack",
       location: "Feira de Santana, Bahia, Brasil",
     },
     navigation: [
@@ -376,7 +372,7 @@ export const portfolioContent: PortfolioDictionary = {
     hero: {
       title: "Hola, soy Afonso Machado.",
       description:
-        "Estudiante de Ingeniería de Computación y desarrollador full-stack. Aquí están algunos de los proyectos y tecnologías que forman parte de mi trayectoria.",
+        "Graduado en Ingeniería de Computación y desarrollador full-stack. Aquí están algunos de los proyectos y tecnologías que forman parte de mi trayectoria.",
       primaryCta: "Ver proyectos",
       secondaryCta: "Contactarme",
     },
@@ -385,7 +381,7 @@ export const portfolioContent: PortfolioDictionary = {
       eyebrow: "Sobre mí",
       title: "Siempre aprendiendo y convirtiendo ideas en aplicaciones web.",
       paragraphs: [
-        "Soy desarrollador web full-stack y estudiante de Ingeniería de Computación. Me gusta entender cómo funcionan las cosas, escribir código claro y crear experiencias útiles para quienes usan un producto.",
+        "Soy desarrollador full-stack graduado en Ingeniería de Computación. Me gusta entender cómo funcionan las cosas, escribir código claro y crear experiencias útiles para quienes usan un producto.",
         "Me interesan el front-end, el back-end y el desarrollo mobile. Este espacio reúne trabajos que representan lo que vengo aprendiendo y construyendo.",
       ],
       highlights: [
@@ -444,49 +440,40 @@ export const portfolioContent: PortfolioDictionary = {
       description: "Una selección de mis repositorios públicos en GitHub.",
       repositoryLabel: "Repositorio",
       openLabel: "Abrir repositorio",
+      openDemoLabel: "Ver demostración",
+      openDemoAriaLabel: "Abrir demostración de",
+      openRepositoryAriaLabel: "Abrir repositorio de",
       moreLabel: "Ver perfil completo en GitHub",
       items: [
         {
-          title: "calculator-react",
+          id: ProjectId.CalculatorReact,
           description:
             "Calculadora inspirada en macOS hecha con React, enfocada en composición de interfaz y comportamiento predecible.",
-          href: "https://github.com/AfonsoMachado/calculator-react",
-          stack: ["React", "JavaScript", "UI"],
         },
         {
-          title: "nubank-clone",
+          id: ProjectId.NubankClone,
           description:
             "Clon de la interfaz móvil de Nubank con React Native, ejercitando fidelidad visual y organización de componentes.",
-          href: "https://github.com/AfonsoMachado/nubank-clone",
-          stack: ["React Native", "JavaScript", "Mobile UI"],
         },
         {
-          title: "flappy-bird",
+          id: ProjectId.FlappyBird,
           description:
             "Recreación de Flappy Bird con HTML, CSS y JavaScript, mostrando lógica de juego y manipulación del DOM.",
-          href: "https://github.com/AfonsoMachado/flappy-bird",
-          stack: ["HTML", "CSS", "JavaScript"],
         },
         {
-          title: "crud-angular",
+          id: ProjectId.CrudAngular,
           description:
             "CRUD en Angular con JSON Server, explorando flujo de datos y estructura de aplicación front-end.",
-          href: "https://github.com/AfonsoMachado/crud-angular",
-          stack: ["Angular", "TypeScript", "JSON Server"],
         },
         {
-          title: "metalflix",
+          id: ProjectId.Metalflix,
           description:
             "Catálogo de videos con temática metal creado durante una inmersión en React, combinando contenido e identidad visual.",
-          href: "https://github.com/AfonsoMachado/metalflix",
-          stack: ["React", "JavaScript", "Content UI"],
         },
         {
-          title: "proffy-nlw",
+          id: ProjectId.ProffyNlw,
           description:
             "Proyecto educativo de Next Level Week centrado en formularios, flujos entre pantallas y experiencia de usuario.",
-          href: "https://github.com/AfonsoMachado/proffy-nlw",
-          stack: ["TypeScript", "Node.js", "Education"],
         },
       ],
     },
@@ -500,22 +487,24 @@ export const portfolioContent: PortfolioDictionary = {
       links: [
         {
           label: "GitHub",
-          href: "https://github.com/AfonsoMachado",
+          href: githubProfileUrl,
+          platform: ContactPlatform.GitHub,
           caption: "Repositorios, historial y proyectos públicos",
         },
         {
           label: "LinkedIn",
-          href: "https://www.linkedin.com/in/afonsomachado/",
+          href: linkedInProfileUrl,
+          platform: ContactPlatform.LinkedIn,
           caption: "Experiencia, networking y contacto profesional",
         },
         {
           label: "Instagram",
-          href: "https://www.instagram.com/afonsomachado",
+          href: instagramProfileUrl,
+          platform: ContactPlatform.Instagram,
           caption: "Presencia personal y detrás de escena",
         },
       ],
     },
-    footer:
-      "Desarrollador web full-stack y estudiante de Ingeniería de Computación.",
+    footer: "Desarrollador full-stack graduado en Ingeniería de Computación.",
   },
 };

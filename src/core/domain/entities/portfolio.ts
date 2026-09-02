@@ -1,4 +1,4 @@
-import type { Locale } from "@/shared/i18n/config";
+import type { Locale } from "@/core/domain/entities/locale";
 
 export type NavItem = {
   href: `#${string}`;
@@ -16,16 +16,30 @@ export type SkillGroup = {
 };
 
 export type Project = {
-  title: string;
+  id: ProjectId;
   description: string;
-  href: string;
-  stack: string[];
 };
 
+export enum ProjectId {
+  CalculatorReact = "calculator-react",
+  CrudAngular = "crud-angular",
+  FlappyBird = "flappy-bird",
+  Metalflix = "metalflix",
+  NubankClone = "nubank-clone",
+  ProffyNlw = "proffy-nlw",
+}
+
+export enum ContactPlatform {
+  GitHub = "github",
+  Instagram = "instagram",
+  LinkedIn = "linkedin",
+}
+
 export type ContactLink = {
-  label: string;
-  href: string;
   caption: string;
+  href: string;
+  label: string;
+  platform: ContactPlatform;
 };
 
 export type PortfolioContent = {
@@ -75,6 +89,9 @@ export type PortfolioContent = {
     description: string;
     repositoryLabel: string;
     openLabel: string;
+    openDemoLabel: string;
+    openDemoAriaLabel: string;
+    openRepositoryAriaLabel: string;
     items: Project[];
     moreLabel: string;
   };

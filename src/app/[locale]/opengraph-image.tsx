@@ -1,6 +1,8 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "Afonso Machado - Desenvolvedor full-stack";
+import { isSupportedLocale, type Locale } from "@/shared/i18n/config";
+
+export const alt = "Afonso Machado | Portfolio";
 
 export const size = {
   width: 1200,
@@ -9,7 +11,29 @@ export const size = {
 
 export const contentType = "image/png";
 
-export default function OpenGraphImage() {
+const copy = {
+  "pt-br": {
+    location: "Feira de Santana, Bahia",
+    role: "Desenvolvedor full-stack",
+  },
+  en: {
+    location: "Feira de Santana, Bahia, Brazil",
+    role: "Full-stack developer",
+  },
+  es: {
+    location: "Feira de Santana, Bahia, Brasil",
+    role: "Desarrollador full-stack",
+  },
+} satisfies Record<Locale, Record<string, string>>;
+
+export default async function OpenGraphImage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  const content = copy[isSupportedLocale(locale) ? locale : "pt-br"];
+
   return new ImageResponse(
     <div
       style={{
@@ -53,7 +77,7 @@ export default function OpenGraphImage() {
             marginTop: 18,
           }}
         >
-          Desenvolvedor full-stack
+          {content.role}
         </div>
       </div>
       <div
@@ -66,7 +90,7 @@ export default function OpenGraphImage() {
           paddingTop: 28,
         }}
       >
-        <span>Feira de Santana, Bahia</span>
+        <span>{content.location}</span>
         <span>Next.js · React · TypeScript</span>
       </div>
     </div>,
