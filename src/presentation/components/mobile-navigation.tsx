@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import type { NavItem } from "@/core/domain/entities/portfolio";
 import {
@@ -15,11 +15,32 @@ type MobileNavigationProps = {
 
 export function MobileNavigation({ items, label }: MobileNavigationProps) {
   const [isOpen, setIsOpen] = useState(false);
+  const buttonRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    if (!isOpen) {
+      return;
+    }
+
+    function closeOnEscape(event: KeyboardEvent) {
+      if (event.key !== "Escape") {
+        return;
+      }
+
+      setIsOpen(false);
+      buttonRef.current?.focus();
+    }
+
+    document.addEventListener("keydown", closeOnEscape);
+
+    return () => document.removeEventListener("keydown", closeOnEscape);
+  }, [isOpen]);
 
   return (
     <div className="relative">
       <button
         type="button"
+        ref={buttonRef}
         aria-label={label}
         aria-expanded={isOpen}
         aria-controls="mobile-navigation"
