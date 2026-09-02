@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 
 import { getPortfolioContent } from "@/core/application/use-cases/get-portfolio-content";
 import { PortfolioPage } from "@/presentation/components/portfolio-page";
+import { getLocalizedUrl } from "@/shared/config/site";
 import { isSupportedLocale, locales, type Locale } from "@/shared/i18n/config";
 
 type LocalePageProps = {
@@ -23,16 +24,33 @@ export async function generateMetadata({
   }
 
   const content = await getPortfolioContent(locale);
+  const localeMetadata = {
+    "pt-br": "pt_BR",
+    en: "en_US",
+    es: "es_ES",
+  } satisfies Record<Locale, string>;
 
   return {
     title: content.meta.title,
     description: content.meta.description,
     alternates: {
+      canonical: `/${locale}`,
       languages: {
         "pt-BR": "/pt-br",
         en: "/en",
         es: "/es",
+        "x-default": "/pt-br",
       },
+    },
+    openGraph: {
+      title: content.meta.title,
+      description: content.meta.description,
+      locale: localeMetadata[locale],
+      url: getLocalizedUrl(locale),
+    },
+    twitter: {
+      title: content.meta.title,
+      description: content.meta.description,
     },
   };
 }
